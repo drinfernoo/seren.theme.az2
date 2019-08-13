@@ -1,1 +1,0 @@
-# seren-clearlogo
