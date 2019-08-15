@@ -13,7 +13,7 @@
                 <texture background="true">$INFO[Window().Property(item.art.fanart)]</texture>
             </control>
             <control type="image">
-                <texture colordiffuse="CC121212">common/bg.jpg</texture>
+                <texture colordiffuse="main_bg_70">common/bg.jpg</texture>
             </control>
         </control>
         

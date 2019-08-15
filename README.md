@@ -23,8 +23,7 @@ This theme supports the display of clearlogo artwork in Arctic Zephyr 2, by enab
 
 `Settings -> Skin Settings -> Furniture -> Clearlogo`
 
-This theme is designed to be used with an overall dark theme, and will use the skin's highlight color in its accent palette, so it's recommended to set the following settings for the best experience:
-* `Settings -> Interface Settings -> Colours -> Dark with Dark Dialogs`
+This theme will use the skin's highlight color in its accent palette, so it's recommended to set it for the best experience:
 * `Settings -> Skin Settings -> Miscellaneous -> Highlight color`
 
 Another consideration is the viewtype used for browsing, so for visual continuity, it's recommended that one of the following viewtypes be used:

@@ -13,7 +13,7 @@
                 <texture background="true">$INFO[Window().Property(item.art.fanart)]</texture>
             </control>
             <control type="image">
-                <texture colordiffuse="CC121212">common/bg.jpg</texture>
+                <texture colordiffuse="main_bg_70">common/bg.jpg</texture>
             </control>
         </control>
 
@@ -67,7 +67,7 @@
                     <left>0</left>
                     <width>12</width>
                     <height>12</height>
-                    <texture colordiffuse="33FFFFFF">scrollbar/left.png</texture>
+                    <texture colordiffuse="main_fg_30">scrollbar/left.png</texture>
                     <visible>Integer.IsLess(Window().Property(progress),10)</visible>
                 </control>
                 <control type="image">
@@ -84,7 +84,7 @@
                     <left>12</left>
                     <width>36</width>
                     <height>12</height>
-                    <texture colordiffuse="33FFFFFF">scrollbar/mid.png</texture>
+                    <texture colordiffuse="main_fg_30">scrollbar/mid.png</texture>
                     <visible>Integer.IsLess(Window().Property(progress),20)</visible>
                 </control>
                 <control type="image">
@@ -101,7 +101,7 @@
                     <left>48</left>
                     <width>36</width>
                     <height>12</height>
-                    <texture colordiffuse="33FFFFFF">scrollbar/mid.png</texture>
+                    <texture colordiffuse="main_fg_30">scrollbar/mid.png</texture>
                     <visible>Integer.IsLess(Window().Property(progress),30)</visible>
                 </control>
                 <control type="image">
@@ -118,7 +118,7 @@
                     <left>84</left>
                     <width>36</width>
                     <height>12</height>
-                    <texture colordiffuse="33FFFFFF">scrollbar/mid.png</texture>
+                    <texture colordiffuse="main_fg_30">scrollbar/mid.png</texture>
                     <visible>Integer.IsLess(Window().Property(progress),40)</visible>
                 </control>
                 <control type="image">
@@ -135,7 +135,7 @@
                     <left>120</left>
                     <width>36</width>
                     <height>12</height>
-                    <texture colordiffuse="33FFFFFF">scrollbar/mid.png</texture>
+                    <texture colordiffuse="main_fg_30">scrollbar/mid.png</texture>
                     <visible>Integer.IsLess(Window().Property(progress),50)</visible>
                 </control>
                 <control type="image">
@@ -152,7 +152,7 @@
                     <left>156</left>
                     <width>36</width>
                     <height>12</height>
-                    <texture colordiffuse="33FFFFFF">scrollbar/mid.png</texture>
+                    <texture colordiffuse="main_fg_30">scrollbar/mid.png</texture>
                     <visible>Integer.IsLess(Window().Property(progress),60)</visible>
                 </control>
                 <control type="image">
@@ -169,7 +169,7 @@
                     <left>192</left>
                     <width>36</width>
                     <height>12</height>
-                    <texture colordiffuse="33FFFFFF">scrollbar/mid.png</texture>
+                    <texture colordiffuse="main_fg_30">scrollbar/mid.png</texture>
                     <visible>Integer.IsLess(Window().Property(progress),70)</visible>
                 </control>
                 <control type="image">
@@ -186,7 +186,7 @@
                     <left>228</left>
                     <width>36</width>
                     <height>12</height>
-                    <texture colordiffuse="33FFFFFF">scrollbar/mid.png</texture>
+                    <texture colordiffuse="main_fg_30">scrollbar/mid.png</texture>
                     <visible>Integer.IsLess(Window().Property(progress),80)</visible>
                 </control>
                 <control type="image">
@@ -203,7 +203,7 @@
                     <left>264</left>
                     <width>36</width>
                     <height>12</height>
-                    <texture colordiffuse="33FFFFFF">scrollbar/mid.png</texture>
+                    <texture colordiffuse="main_fg_30">scrollbar/mid.png</texture>
                     <visible>Integer.IsLess(Window().Property(progress),90)</visible>
                 </control>
                 <control type="image">
@@ -220,7 +220,7 @@
                     <left>300</left>
                     <width>12</width>
                     <height>12</height>
-                    <texture colordiffuse="33FFFFFF">scrollbar/right.png</texture>
+                    <texture colordiffuse="main_fg_30">scrollbar/right.png</texture>
                     <visible>Integer.IsLess(Window().Property(progress),100)</visible>
                 </control>
                 <control type="image">

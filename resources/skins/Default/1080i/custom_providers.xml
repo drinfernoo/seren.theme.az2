@@ -119,6 +119,7 @@
                             <centertop>50%</centertop>
                             <textcolor>dialog_fg_70</textcolor>
                             <label>$INFO[ListItem.Label]</label>
+                            <visible>String.Contains(Skin.CurrentColourTheme, Dark)</visible>
                         </control>
                         
                         <control type="label">
@@ -127,6 +128,24 @@
                             <align>right</align>
                             <textcolor>dialog_fg_70</textcolor>
                             <label>$INFO[ListItem.Property(author)] - $INFO[ListItem.Property(version)]</label>
+                            <visible>String.Contains(Skin.CurrentColourTheme, Dark)</visible>
+                        </control>
+                        
+                        <control type="label">
+                            <left>30</left>
+                            <centertop>50%</centertop>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                            <visible>!String.Contains(Skin.CurrentColourTheme, Dark)</visible>
+                        </control>
+                        
+                        <control type="label">
+                            <right>30</right>
+                            <centertop>50%</centertop>
+                            <align>right</align>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <label>$INFO[ListItem.Property(author)] - $INFO[ListItem.Property(version)]</label>
+                            <visible>!String.Contains(Skin.CurrentColourTheme, Dark)</visible>
                         </control>
                     </itemlayout>
                     
@@ -142,6 +161,7 @@
                             <left>30</left>
                             <textcolor>dialog_fg_100</textcolor>
                             <label>$INFO[ListItem.Label]</label>
+                            <visible>String.Contains(Skin.CurrentColourTheme, Dark)</visible>
                         </control>
                         
                         <control type="label">
@@ -150,6 +170,23 @@
                             <align>right</align>
                             <textcolor>dialog_fg_100</textcolor>
                             <label>$INFO[ListItem.Property(author)] - $INFO[ListItem.Property(version)]</label>
+                            <visible>String.Contains(Skin.CurrentColourTheme, Dark)</visible>
+                        </control>
+                        
+                        <control type="label">
+                            <left>30</left>
+                            <textcolor>dialog_bg_100</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                            <visible>!String.Contains(Skin.CurrentColourTheme, Dark)</visible>
+                        </control>
+                        
+                        <control type="label">
+                            <right>30</right>
+                            <centertop>50%</centertop>
+                            <align>right</align>
+                            <textcolor>dialog_bg_100</textcolor>
+                            <label>$INFO[ListItem.Property(author)] - $INFO[ListItem.Property(version)]</label>
+                            <visible>!String.Contains(Skin.CurrentColourTheme, Dark)</visible>
                         </control>
                     </focusedlayout>
                 </control>
@@ -197,6 +234,7 @@
                             <centertop>50%</centertop>
                             <textcolor>dialog_fg_70</textcolor>
                             <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                            <visible>String.Contains(Skin.CurrentColourTheme, Dark)</visible>
                         </control>
                         
                         <!-- Enabled Status -->
@@ -206,7 +244,7 @@
                             <align>right</align>
                             <textcolor>dialog_fg_70</textcolor>
                             <label>[CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE] - [COLOR lawngreen][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
-                            <visible>String.IsEqual(ListItem.Property(status),enabled)</visible>
+                            <visible>String.IsEqual(ListItem.Property(status), enabled) + String.Contains(Skin.CurrentColourTheme, Dark)</visible>
                         </control>
                         
                         <!-- Disabled Status -->
@@ -216,7 +254,36 @@
                             <align>right</align>
                             <textcolor>dialog_fg_70</textcolor>
                             <label>[CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE] - [COLOR crimson][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
-                            <visible>String.IsEqual(ListItem.Property(status),disabled)</visible>
+                            <visible>String.IsEqual(ListItem.Property(status), disabled) + String.Contains(Skin.CurrentColourTheme, Dark)</visible>
+                        </control>
+                        
+                        <!-- Provider Label -->
+                        <control type="label">
+                            <left>30</left>
+                            <centertop>50%</centertop>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                            <visible>!String.Contains(Skin.CurrentColourTheme, Dark)</visible>
+                        </control>
+                        
+                        <!-- Enabled Status -->
+                        <control type="label">
+                            <right>30</right>
+                            <centertop>50%</centertop>
+                            <align>right</align>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <label>[CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE] - [COLOR darkgreen][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
+                            <visible>String.IsEqual(ListItem.Property(status), enabled) + !String.Contains(Skin.CurrentColourTheme, Dark)</visible>
+                        </control>
+                        
+                        <!-- Disabled Status -->
+                        <control type="label">
+                            <right>30</right>
+                            <centertop>50%</centertop>
+                            <align>right</align>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <label>[CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE] - [COLOR crimson][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
+                            <visible>String.IsEqual(ListItem.Property(status), disabled) + !String.Contains(Skin.CurrentColourTheme, Dark)</visible>
                         </control>
                     </itemlayout>
                     
@@ -237,7 +304,7 @@
                             <left>30</left>
                             <centertop>50%</centertop>
                             <textcolor>dialog_fg_70</textcolor>
-                            <visible>!Control.HasFocus(2001)</visible>
+                            <visible>!Control.HasFocus(2001) + String.Contains(Skin.CurrentColourTheme, Dark)</visible>
                             <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
                         </control>
                         
@@ -246,7 +313,7 @@
                             <left>30</left>
                             <centertop>50%</centertop>
                             <textcolor>dialog_fg_100</textcolor>
-                            <visible>Control.HasFocus(2001)</visible>
+                            <visible>Control.HasFocus(2001) + String.Contains(Skin.CurrentColourTheme, Dark)</visible>
                             <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
                         </control>
                         
@@ -257,7 +324,7 @@
                             <align>right</align>
                             <textcolor>dialog_fg_70</textcolor>
                             <label>[CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE] - [COLOR lawngreen][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
-                            <visible>String.IsEqual(ListItem.Property(status), enabled) + !Control.HasFocus(2001)</visible>
+                            <visible>String.IsEqual(ListItem.Property(status), enabled) + !Control.HasFocus(2001) + String.Contains(Skin.CurrentColourTheme, Dark)</visible>
                         </control>
                         
                         <!-- Disabled Status -->
@@ -267,7 +334,7 @@
                             <align>right</align>
                             <textcolor>dialog_fg_70</textcolor>
                             <label>[CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE] - [COLOR crimson][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
-                            <visible>String.IsEqual(ListItem.Property(status), disabled) + !Control.HasFocus(2001)</visible>
+                            <visible>String.IsEqual(ListItem.Property(status), disabled) + !Control.HasFocus(2001) + String.Contains(Skin.CurrentColourTheme, Dark)</visible>
                         </control>
                         
                         <!-- Status -->
@@ -277,7 +344,55 @@
                             <align>right</align>
                             <textcolor>dialog_fg_100</textcolor>
                             <label>[CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE] - [CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE]</label>
-                            <visible>Control.HasFocus(2001)</visible>
+                            <visible>Control.HasFocus(2001) + String.Contains(Skin.CurrentColourTheme, Dark)</visible>
+                        </control>
+                        
+                        <!-- Provider Label -->
+                        <control type="label">
+                            <left>30</left>
+                            <centertop>50%</centertop>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <visible>!Control.HasFocus(2001) + !String.Contains(Skin.CurrentColourTheme, Dark)</visible>
+                            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Provider Label -->
+                        <control type="label">
+                            <left>30</left>
+                            <centertop>50%</centertop>
+                            <textcolor>dialog_bg_100</textcolor>
+                            <visible>Control.HasFocus(2001) + !String.Contains(Skin.CurrentColourTheme, Dark)</visible>
+                            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Enabled Status -->
+                        <control type="label">
+                            <right>30</right>
+                            <centertop>50%</centertop>
+                            <align>right</align>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <label>[CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE] - [COLOR darkgreen][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
+                            <visible>String.IsEqual(ListItem.Property(status), enabled) + !Control.HasFocus(2001) + !String.Contains(Skin.CurrentColourTheme, Dark)</visible>
+                        </control>
+                        
+                        <!-- Disabled Status -->
+                        <control type="label">
+                            <right>30</right>
+                            <centertop>50%</centertop>
+                            <align>right</align>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <label>[CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE] - [COLOR crimson][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
+                            <visible>String.IsEqual(ListItem.Property(status), disabled) + !Control.HasFocus(2001) + !String.Contains(Skin.CurrentColourTheme, Dark)</visible>
+                        </control>
+                        
+                        <!-- Status -->
+                        <control type="label">
+                            <right>30</right>
+                            <centertop>50%</centertop>
+                            <align>right</align>
+                            <textcolor>dialog_bg_100</textcolor>
+                            <label>[CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE] - [CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE]</label>
+                            <visible>Control.HasFocus(2001) + !String.Contains(Skin.CurrentColourTheme, Dark)</visible>
                         </control>
                     </focusedlayout>
                 </control>
