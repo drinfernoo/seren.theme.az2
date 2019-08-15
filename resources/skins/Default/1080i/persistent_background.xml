@@ -5,50 +5,54 @@
         <top>0</top>
     </coordinates>
     <controls>
-        <!-- Background Texture -->
-        <control type="image">
-            <texture>$INFO[Window().Property(texture.white)]</texture>
-            <colordiffuse>FF000000</colordiffuse>
-        </control>
-        <control type="list" id="1100">
-        </control>
-
-        <!-- Background -->
-        <control type="image">
-            <top>0</top>
-            <left>0</left>
-            <width>1920</width>
-            <height>1080</height>
-            <texture background="true">$INFO[Window().Property(skin.dir)]/media/background.jpg</texture>
+    
+        <!-- Fanart Backdrop -->
+        <control type="group">
+            <include>Dimensions_Fullscreen</include>
+            <control type="image">
+                <texture background="true">$INFO[Window().Property(item.art.fanart)]</texture>
+            </control>
+            <control type="image">
+                <texture colordiffuse="CC121212">common/bg.jpg</texture>
+            </control>
         </control>
 
-        <control type="image">
-            <top>0</top>
-            <left>0</left>
-            <width>1920</width>
-            <height>1080</height>
-            <texture background="true">$INFO[Window().Property(texture.white)]</texture>
-            <colordiffuse>CC000000</colordiffuse>
+        <!-- Top Header  -->
+        <control type="group">
+            
+            <!-- Clearlogo -->
+            <control type="image" id="1001">
+                <centerleft>50%</centerleft>
+                <width>248</width>
+                <top>-900</top>
+                <aspectratio>keep</aspectratio>
+                <texture>$INFO[Window().Property(item.art.clearlogo)]</texture>
+                <visible>Skin.HasSetting(EnableClearlogo)</visible>
+            </control>
+            
+            <!-- Fallback Label -->
+            <control type="label">
+                <centerleft>50%</centerleft>
+                <aligny>center</aligny>
+                <align>center</align>
+                <top>30</top>
+                <height>120</height>
+                <font>font_byline</font>
+                <textcolor>main_fg_70</textcolor>
+                <label>$INFO[Window().Property(item.info.title)]</label>
+                <visible>!Skin.HasSetting(EnableClearlogo) | String.IsEqual(Window().Property(item.art.clearlogo), None) | String.IsEqual(Window().Property(item.art.clearlogo), )</visible>
+            </control>
         </control>
-
-
-        <!-- Seren Ico -->
-        <control type="image" id="1001">
-            <top>-900</top>
-            <left>836</left>
-            <width>248</width>
-            <aspectratio>keep</aspectratio>
-            <texture>$INFO[Window().Property(item.art.clearlogo)]</texture>
-        </control>
-
+        
+        <!-- Notification -->
         <control type="label">
-            <left>0</left>
-            <top>220</top>
-            <width>100%</width>
-            <font>font12</font>
+            <font>font_byline</font>
+            <centerleft>50%</centerleft>
+            <centertop>50%</centertop>
             <align>center</align>
             <aligny>center</aligny>
-            <textcolor>FFDDDDDD</textcolor>
+            <textcolor>main_fg_100</textcolor>
+            <visible>String.IsEqual(Window().Property(process_started),false)</visible>
             <label>$INFO[Window().Property(notification_text)]</label>
         </control>
     </controls>

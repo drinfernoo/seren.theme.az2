@@ -1,347 +1,286 @@
 <window type="dialog">
-    <defaultcontrol>2</defaultcontrol>
+    <defaultcontrol>3009</defaultcontrol>
     <coordinates>
         <left>0</left>
         <top>0</top>
     </coordinates>
     <controls>
-        <!-- Background -->
-        <control type="image">
-            <top>0</top>
-            <left>0</left>
-            <width>100%</width>
-            <height>100%</height>
-            <texture background="true">$INFO[Window().Property(seren.fanart)]</texture>
-        </control>
-
-        <control type="image">
-            <top>0</top>
-            <left>0</left>
-            <width>100%</width>
-            <height>100%</height>
-            <texture background="true">$INFO[Window().Property(texture.white)]</texture>
-            <colordiffuse>33000000</colordiffuse>
-        </control>
-
-        <control type="label">
-            <font>font32</font>
-            <width>100%</width>
-            <height>100</height>
-            <label>Provider Manager</label>
-            <top>20</top>
-            <align>center</align>
-        </control>
-
-        <control type="image">
-            <visible>true</visible>
-            <left>50</left>
-            <width>350</width>
-            <height>840</height>
-            <top>200</top>
-            <border>5</border>
-            <texture>$INFO[Window().Property(texture.white)]</texture>
-            <colordiffuse>11FFFFFF</colordiffuse>
-        </control>
-
-        <!-- Quick Access Panel -->
-       <control type="group" id="4000">
-           <left>50</left>
-            <control type="label">
-                <top>100</top>
-                <height>100</height>
-                <width>350</width>
-                <label>[B]Tool Box[/B]</label>
-            </control>
-            <control type="grouplist">
-                <onup>SetFocus(4000)</onup>
-                <ondown>SetFocus(4000)</ondown>
-                <onleft>SetFocus(4000)</onleft>
-                <top>200</top>
-                <height>840</height>
-                <control type="button" id="3009">
-                    <onright>SetFocus(2000)</onright>
-                    <top>0</top>
-                    <width>350</width>
-                    <height>100</height>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>Install Package</label>
+        
+        <!-- Settings Dialog -->
+        <control type="group">            
+            <control type="group">
+                <width>1820</width>
+                <height>930</height>
+                <centerleft>50%</centerleft>
+                <centertop>50%</centertop>    
+                
+                <control type="image">
+                    <texture border="16" colordiffuse="dialog_bg_100">common/rounded-dialog.png</texture>
                 </control>
-                <control type="button" id="3010">
-                    <onright>SetFocus(2000)</onright>
-                    <top>0</top>
-                    <width>350</width>
-                    <height>100</height>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>Uninstall Package</label>
-                </control>
-                <control type="button" id="3007">
-                    <onright>SetFocus(2000)</onright>
-                    <top>0</top>
-                    <width>350</width>
-                    <height>100</height>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>Enable Package</label>
-                </control>
-                <control type="button" id="3008">
-                    <onright>SetFocus(2000)</onright>
-                    <top>0</top>
-                    <width>350</width>
-                    <height>100</height>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>Disable Package</label>
-                </control>
-                <control type="button" id="3001">
-                    <onright>SetFocus(2000)</onright>
-                    <top>0</top>
-                    <width>350</width>
-                    <height>100</height>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>Enable All Hosters</label>
-                </control>
-                <control type="button" id="3002">
-                    <onright>SetFocus(2000)</onright>
-                    <top>100</top>
-                    <width>350</width>
-                    <height>100</height>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>Enable All Torrents</label>
-                </control>
-                <control type="button" id="3003">
-                    <onright>SetFocus(2000)</onright>
-                    <top>200</top>
-                    <width>350</width>
-                    <height>100</height>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>Disable All Hosters</label>
-                </control>
-                <control type="button" id="3004">
-                    <onright>SetFocus(2000)</onright>
-                    <top>300</top>
-                    <width>350</width>
-                    <height>100</height>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>Disable All Torrents</label>
-                </control>
-                <control type="button" id="3005">
-                    <onright>SetFocus(2000)</onright>
-                    <top>400</top>
-                    <width>350</width>
-                    <height>100</height>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>Enable All</label>
-                </control>
-                <control type="button" id="3006">
-                    <onright>SetFocus(2000)</onright>
-                    <top>500</top>
-                    <width>350</width>
-                    <height>100</height>
-                    <focuscolor>$INFO[Window.Property(settings.color)]</focuscolor>
-                    <label>Disable All</label>
+                
+                <!-- Header -->
+                <control type="label">
+                    <include>Dialog_Standard_Header</include>
+                    <label>Settings - Provider Manager</label>
                 </control>
             </control>
-
-       </control>
-
-        <!-- Package List -->
-        <control type="group">
-            <top>100</top>
-            <left>425</left>
-            <!-- Texture -->
-            <control type="label">
-                <height>100</height>
-                <width>780</width>
-                <label>[B]Installed Packages[/B]</label>
+            
+            <!-- Shortcut Panel -->
+            <control type="group" id="4000">
+                <left>50</left>
+                <top>195</top>
+                <width>400</width>
+               
+                <control type="grouplist">
+                    <onright>SetFocus(2000)</onright>
+                    
+                    <itemgap>0</itemgap>
+                    
+                    <control type="button" id="3009">
+                        <include>Dialog_Standard_Button</include>
+                        <label>Install Package</label>
+                    </control>
+                    <control type="button" id="3010">
+                        <include>Dialog_Standard_Button</include>
+                        <label>Uninstall Package</label>
+                    </control>
+                    <control type="button" id="3007">
+                        <include>Dialog_Standard_Button</include>
+                        <label>Enable Package</label>
+                    </control>
+                    <control type="button" id="3008">
+                        <include>Dialog_Standard_Button</include>
+                        <label>Disable Package</label>
+                    </control>
+                    <control type="button" id="3001">
+                        <include>Dialog_Standard_Button</include>
+                        <label>Enable All Hosters</label>
+                    </control>
+                    <control type="button" id="3002">
+                        <include>Dialog_Standard_Button</include>
+                        <label>Enable All Torrents</label>
+                    </control>
+                    <control type="button" id="3003">
+                        <include>Dialog_Standard_Button</include>
+                        <label>Disable All Hosters</label>
+                    </control>
+                    <control type="button" id="3004">
+                        <include>Dialog_Standard_Button</include>
+                        <label>Disable All Torrents</label>
+                    </control>
+                    <control type="button" id="3005">
+                        <include>Dialog_Standard_Button</include>
+                        <label>Enable All</label>
+                    </control>
+                    <control type="button" id="3006">
+                        <include>Dialog_Standard_Button</include>
+                        <label>Disable All</label>
+                    </control>
+                </control>
             </control>
-
+            
+            <!-- Separator -->
             <control type="image">
-                <top>100</top>
-                <visible>true</visible>
-                <width>660</width>
-                <height>840</height>
-                <border>5</border>
-                <texture>$INFO[Window().Property(texture.white)]</texture>
-                <colordiffuse>DD2e2d32</colordiffuse>
+                <top>195</top>
+                <left>450</left>
+                <width>1</width>
+                <height>780</height>
+                <texture colordiffuse="dialog_fg_12">common/white.png</texture>
             </control>
+            
+            <!-- Package Panel -->
+            <control type="group">
+                <top>195</top>
+                <left>450</left>
+                <width>710</width>
+                <height>780</height>
+                
+                <!-- Header -->
+                <control type="label">
+                    <aligny>top</aligny>
+                    <top>45</top>
+                    <left>30</left>
+                    <font>font_hintlabel</font>
+                    <textcolor>dialog_fg_70</textcolor>
+                    <label>Installed Packages</label>
+                </control>
 
-            <!-- List -->
-            <control type="list" id="2000">
-                <top>100</top>
-                <width>660</width>
-                <height>840</height>
-                <onright>SetFocus(2001)</onright>
-                <onleft>SetFocus(3001)</onleft>
-                <itemlayout height="75">
-                    <control type="label">
-                        <width>640</width>
-                        <height>100%</height>
-                        <aligny>center</aligny>
-                        <left>10</left>
-                        <label>$INFO[ListItem.Label]</label>
-                    </control>
-                    <control type="label">
-                        <font>font10</font>
-                        <height>10</height>
-                        <top>30</top>
-                        <width>95%</width>
-                        <aligny>top</aligny>
-                        <align>right</align>
-                        <label>$INFO[ListItem.Property(author)] - $INFO[ListItem.Property(version)]</label>
-                    </control>
-                    <control type="image">
-                        <width>660</width>
-                        <height>1</height>
-                        <top>74</top>
-                        <texture>$INFO[Window().Property(texture.white)]</texture>
-                        <colordiffuse>EEd3d3d3</colordiffuse>
-                    </control>
-                </itemlayout>
-                <focusedlayout height="75">
-                    <control type="image">
-                        <width>100%</width>
-                        <height>100%</height>
-                        <!--<visible>Control.HasFocus(2000)</visible>-->
-                        <texture>$INFO[Window().Property(texture.white)]</texture>
-                        <colordiffuse>44d3d3d3</colordiffuse>
-                    </control>
-                    <control type="label">
-                        <width>640</width>
-                        <left>10</left>
-                        <height>100%</height>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Label]</label>
-                    </control>
-                    <control type="label">
-                        <font>font10</font>
-                        <height>10</height>
-                        <top>30</top>
-                        <width>95%</width>
-                        <aligny>top</aligny>
-                        <align>right</align>
-                        <label>$INFO[ListItem.Property(author)] - $INFO[ListItem.Property(version)]</label>
-                    </control>
-                    <control type="image">
-                        <width>660</width>
-                        <height>1</height>
-                        <top>74</top>
-                        <texture>$INFO[Window().Property(texture.white)]</texture>
-                        <colordiffuse>EEd3d3d3</colordiffuse>
-                    </control>
-                </focusedlayout>
-            </control>
-        </control>
-
-        <!-- Provider List -->
-        <control type="group">
-            <left>1100</left>
-            <top>200</top>
-
-            <control type="label">
-                <top>-100</top>
-                <height>100</height>
-                <width>780</width>
-                <label>[B]Package Providers[/B]</label>
-            </control>
-
-            <!-- Texture -->
-            <control type="image">
-                <visible>true</visible>
-                <width>780</width>
-                <height>840</height>
-                <border>5</border>
-                <texture>$INFO[Window().Property(texture.white)]</texture>
-                <colordiffuse>DD2e2d32</colordiffuse>
-            </control>
-
-            <!-- List -->
-            <control type="list" id="2001">
-                <width>780</width>
-                <height>840</height>
-                <onleft>SetFocus(2000)</onleft>
-                <itemlayout height="120">
-                    <control type="label">
-                        <width>100%</width>
-                        <height>100%</height>
-                        <left>10</left>
-                        <aligny>top</aligny>
-                        <top>10</top>
-                        <label>[COLOR $INFO[Window.Property(settings.color)]][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/COLOR]</label>
-                    </control>
-                    <control type="group">
-                        <top>50</top>
+                <!-- List -->
+                <control type="list" id="2000">
+                    <top>78</top>
+                    <orientation>vertical</orientation>
+                    <focusposition>1</focusposition>
+                    <onright>SetFocus(2001)</onright>
+                    <onleft>SetFocus(4000)</onleft>
+                    
+                    <itemlayout height="item_list_height">
                         <control type="label">
-                            <left>10</left>
-                            <height>100%</height>
-                            <aligny>center</aligny>
-                            <label>Provider Type: [COLOR $INFO[Window.Property(settings.color)]][CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE][/COLOR]</label>
+                            <left>30</left>
+                            <centertop>50%</centertop>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
                         </control>
+                        
                         <control type="label">
-                            <left>65%</left>
-                            <height>100%</height>
-                            <aligny>center</aligny>
-                            <label>Status: [COLOR lawngreen][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
-                            <visible>String.IsEqual(ListItem.Property(status),enabled)</visible>
+                            <right>30</right>
+                            <centertop>50%</centertop>
+                            <align>right</align>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <label>$INFO[ListItem.Property(author)] - $INFO[ListItem.Property(version)]</label>
                         </control>
-                        <control type="label">
-                            <left>65%</left>
-                            <height>100%</height>
-                            <aligny>center</aligny>
-                            <label>Status: [COLOR crimson][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
-                            <visible>String.IsEqual(ListItem.Property(status),disabled)</visible>
-                        </control>
+                    </itemlayout>
+                    
+                    <focusedlayout height="item_list_height">
                         <control type="image">
                             <width>100%</width>
-                            <height>1</height>
-                            <top>69</top>
-                            <texture>$INFO[Window().Property(texture.white)]</texture>
-                            <colordiffuse>EEd3d3d3</colordiffuse>
-                        </control>
-                    </control>
-                </itemlayout>
-                <focusedlayout height="120">
-                    <control type="image">
-                        <width>100%</width>
-                        <height>100%</height>
-                        <texture>$INFO[Window().Property(texture.white)]</texture>
-                        <visible>Control.HasFocus(2001)</visible>
-                        <colordiffuse>44d3d3d3</colordiffuse>
-                    </control>
-                    <control type="label">
-                        <top>10</top>
-                        <width>580</width>
-                        <left>10</left>
-                        <aligny>top</aligny>
-                        <label>[COLOR $INFO[Window.Property(settings.color)]][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/COLOR]</label>
-                    </control>
-                    <control type="group">
-                        <top>50</top>
-                        <control type="label">
-                            <width>50%</width>
-                            <left>10</left>
-                            <label>Provider Type: [COLOR $INFO[Window.Property(settings.color)]][CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE][/COLOR]</label>
-                        </control>
-                        <control type="label">
-                            <left>65%</left>
                             <height>100%</height>
-                            <aligny>center</aligny>
-                            <label>Status: [COLOR lawngreen][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
+                            <texture>$INFO[Window().Property(texture.white)]</texture>
+                            <colordiffuse>$VAR[ColorHighlight]</colordiffuse>
+                        </control>
+                        
+                        <control type="label">
+                            <left>30</left>
+                            <textcolor>dialog_fg_100</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                        
+                        <control type="label">
+                            <right>30</right>
+                            <centertop>50%</centertop>
+                            <align>right</align>
+                            <textcolor>dialog_fg_100</textcolor>
+                            <label>$INFO[ListItem.Property(author)] - $INFO[ListItem.Property(version)]</label>
+                        </control>
+                    </focusedlayout>
+                </control>
+            </control>
+            
+            <!-- Separator -->
+            <control type="image">
+                <top>195</top>
+                <left>1160</left>
+                <width>1</width>
+                <height>780</height>
+                <texture colordiffuse="dialog_fg_12">common/white.png</texture>
+            </control>
+            
+            <!-- Provider Panel -->
+            <control type="group">
+                <top>195</top>
+                <left>1160</left>
+                <width>710</width>
+                <height>780</height>
+
+                <!-- Header -->
+                <control type="label">
+                    <aligny>top</aligny>
+                    <top>45</top>
+                    <left>30</left>
+                    <font>font_hintlabel</font>
+                    <textcolor>dialog_fg_70</textcolor>
+                    <label>Package Providers</label>
+                </control>
+
+                <!-- List -->
+                <control type="list" id="2001">
+                    <top>78</top>
+                    <orientation>vertical</orientation>
+                    <focusposition>1</focusposition>
+                    <onleft>SetFocus(2000)</onleft>
+
+                    <!-- Unfocused Item -->
+                    <itemlayout height="item_list_height">
+                        
+                        <!-- Provider Label -->
+                        <control type="label">
+                            <left>30</left>
+                            <centertop>50%</centertop>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Enabled Status -->
+                        <control type="label">
+                            <right>30</right>
+                            <centertop>50%</centertop>
+                            <align>right</align>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <label>[CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE] - [COLOR lawngreen][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
                             <visible>String.IsEqual(ListItem.Property(status),enabled)</visible>
                         </control>
+                        
+                        <!-- Disabled Status -->
                         <control type="label">
-                            <left>65%</left>
-                            <height>100%</height>
-                            <aligny>center</aligny>
-                            <label>Status: [COLOR crimson][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
+                            <right>30</right>
+                            <centertop>50%</centertop>
+                            <align>right</align>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <label>[CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE] - [COLOR crimson][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
                             <visible>String.IsEqual(ListItem.Property(status),disabled)</visible>
                         </control>
+                    </itemlayout>
+                    
+                    <!-- Focused Item -->
+                    <focusedlayout height="item_list_height">
+                        
+                        <!-- Highlight -->
                         <control type="image">
                             <width>100%</width>
-                            <height>1</height>
-                            <top>69</top>
+                            <height>100%</height>
                             <texture>$INFO[Window().Property(texture.white)]</texture>
-                            <colordiffuse>EEd3d3d3</colordiffuse>
+                            <visible>Control.HasFocus(2001)</visible>
+                            <colordiffuse>$VAR[ColorHighlight]</colordiffuse>
                         </control>
-                    </control>
-                </focusedlayout>
+                        
+                        <!-- Provider Label -->
+                        <control type="label">
+                            <left>30</left>
+                            <centertop>50%</centertop>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <visible>!Control.HasFocus(2001)</visible>
+                            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Provider Label -->
+                        <control type="label">
+                            <left>30</left>
+                            <centertop>50%</centertop>
+                            <textcolor>dialog_fg_100</textcolor>
+                            <visible>Control.HasFocus(2001)</visible>
+                            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Enabled Status -->
+                        <control type="label">
+                            <right>30</right>
+                            <centertop>50%</centertop>
+                            <align>right</align>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <label>[CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE] - [COLOR lawngreen][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
+                            <visible>String.IsEqual(ListItem.Property(status), enabled) + !Control.HasFocus(2001)</visible>
+                        </control>
+                        
+                        <!-- Disabled Status -->
+                        <control type="label">
+                            <right>30</right>
+                            <centertop>50%</centertop>
+                            <align>right</align>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <label>[CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE] - [COLOR crimson][CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE][/COLOR]</label>
+                            <visible>String.IsEqual(ListItem.Property(status), disabled) + !Control.HasFocus(2001)</visible>
+                        </control>
+                        
+                        <!-- Status -->
+                        <control type="label">
+                            <right>30</right>
+                            <centertop>50%</centertop>
+                            <align>right</align>
+                            <textcolor>dialog_fg_100</textcolor>
+                            <label>[CAPITALIZE]$INFO[ListItem.Property(provider_type)][/CAPITALIZE] - [CAPITALIZE]$INFO[ListItem.Property(status)][/CAPITALIZE]</label>
+                            <visible>Control.HasFocus(2001)</visible>
+                        </control>
+                    </focusedlayout>
+                </control>
             </control>
         </control>
     </controls>

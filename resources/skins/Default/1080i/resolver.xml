@@ -5,97 +5,93 @@
         <top>0</top>
     </coordinates>
     <controls>
-        <!-- Background Texture -->
-        <control type="image">
-            <texture>$INFO[Window().Property(texture.white)]</texture>
-            <colordiffuse>FF000000</colordiffuse>
-        </control>
-        <control type="list" id="1100">
-        </control>
-
-        <!-- Background -->
-        <control type="image">
-            <top>0</top>
-            <left>0</left>
-            <width>1920</width>
-            <height>1080</height>
-            <texture background="true">$INFO[Window().Property(item.art.fanart)]</texture>
-        </control>
-
-        <control type="image">
-            <top>0</top>
-            <left>0</left>
-            <width>1920</width>
-            <height>1080</height>
-            <texture background="true">$INFO[Window().Property(texture.white)]</texture>
-            <colordiffuse>CC000000</colordiffuse>
-        </control>
-
-
-        <!-- Seren Logo -->
-        <control type="image" id="1001">
-            <top>-900</top>
-            <left>836</left>
-            <width>248</width>
-            <aspectratio>keep</aspectratio>
-            <texture>$INFO[Window().Property(item.art.clearlogo)]</texture>
-        </control>
-        <control>
-            <top>600</top>
-            <label>$INFO[Window().Property(iisvis)]</label>
-        </control>
-
-        <control type="label">
-            <left>0</left>
-            <top>300</top>
-            <width>100%</width>
-            <font>font12</font>
-            <align>center</align>
-            <aligny>center</aligny>
-            <textcolor>FFDDDDDD</textcolor>
-            <label>$INFO[Window().Property(notification_text)]</label>
-        </control>
+        
+        <!-- Fanart Backdrop -->
         <control type="group">
-            <left>760</left>
-            <top>550</top>
-            <width>100%</width>
-            <!-- Information -->
+            <include>Dimensions_Fullscreen</include>
+            <control type="image">
+                <texture background="true">$INFO[Window().Property(item.art.fanart)]</texture>
+            </control>
+            <control type="image">
+                <texture colordiffuse="CC121212">common/bg.jpg</texture>
+            </control>
+        </control>
+
+        <!-- Top Header  -->
+        <control type="group">
+            
+            <!-- Clearlogo -->
+            <control type="image" id="1001">
+                <centerleft>50%</centerleft>
+                <width>248</width>
+                <top>-900</top>
+                <aspectratio>keep</aspectratio>
+                <texture>$INFO[Window().Property(item.art.clearlogo)]</texture>
+                <visible>Skin.HasSetting(EnableClearlogo)</visible>
+            </control>
+            
+            <!-- Fallback Label -->
             <control type="label">
-                <top>-300</top>
-                <left>-760</left>
-                <width>1920</width>
-                <font>font12</font>
+                <centerleft>50%</centerleft>
+                <aligny>center</aligny>
+                <align>center</align>
+                <top>30</top>
+                <height>120</height>
+                <font>font_byline</font>
+                <textcolor>main_fg_70</textcolor>
+                <label>$INFO[Window().Property(item.info.title)]</label>
+                <visible>!Skin.HasSetting(EnableClearlogo) | String.IsEqual(Window().Property(item.art.clearlogo), None) | String.IsEqual(Window().Property(item.art.clearlogo), )</visible>
+            </control>
+        </control>
+
+        <control type="group">
+            <left>804</left>
+        
+            <!-- Notification -->
+            <control type="label">
+                <font>font_byline</font>
+                <centerleft>50%</centerleft>
+                <centertop>50%</centertop>
                 <align>center</align>
                 <aligny>center</aligny>
-                <width>auto</width>
-                <textcolor>FFDDDDDD</textcolor>
-                <label>[COLOR $INFO[Window().Property(settings.color)]]$INFO[Window().Property(release_title)][/COLOR]</label>
+                <textcolor>main_fg_100</textcolor>
+                <visible>String.IsEqual(Window().Property(process_started),false)</visible>
+                <label>$INFO[Window().Property(notification_text)]</label>
             </control>
-
-            <control type="label">
-                <top>-220</top>
-                <left>-760</left>
+            
+            <control type="group">
+                <centerleft>50%</centerleft>
+                <left>-800</left>
                 <width>1920</width>
-                <font>font12</font>
                 <align>center</align>
-                <aligny>center</aligny>
-                <width>auto</width>
-                <textcolor>FFDDDDDD</textcolor>
-                <label>Provider: [UPPERCASE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(debrid_provider)][/COLOR][/UPPERCASE] | Source:  [UPPERCASE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(source_provider)][/COLOR][/UPPERCASE]</label>
-            </control>
+                
+                <!-- Stream Label -->
+                <control type="label">
+                    <centertop>50%</centertop>
+                    <font>font_byline</font>
+                    <align>center</align>
+                    <textcolor>main_fg_100</textcolor>
+                    <label>[COLOR $VAR[ColorHighlight]]$INFO[Window().Property(release_title)][/COLOR]</label>
+                </control>
 
-            <control type="label">
-                <top>-140</top>
-                <left>-760</left>
-                <width>1920</width>
-                <font>font12</font>
-                <align>center</align>
-                <aligny>center</aligny>
-                <width>auto</width>
-                <textcolor>FFDDDDDD</textcolor>
-                <label>Resolution: [UPPERCASE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(source_resolution)][/COLOR][UPPERCASE] | Info: [UPPERCASE][COLOR$INFO[Window().Property(settings.color)]]$INFO[Window().Property(source_info)][/COLOR][/UPPERCASE]</label>
-            </control>
+                <!-- Provider Info -->
+                <control type="label">
+                    <top>60</top>
+                    <font>font_byline</font>
+                    <align>center</align>
+                    <textcolor>main_fg_100</textcolor>
+                    <label>Provider: [COLOR $VAR[ColorHighlight]]$INFO[Window().Property(debrid_provider)][/COLOR] | Source: [COLOR $VAR[ColorHighlight]]$INFO[Window().Property(source_provider)][/COLOR]</label>
+                </control>
 
+                <!-- Stream Metadata -->
+                <control type="label">
+                    <top>124</top>
+                    <font>font_byline</font>
+                    <align>center</align>
+                    <textcolor>main_fg_100</textcolor>
+                    <label>Resolution: [COLOR $VAR[ColorHighlight]]$INFO[Window().Property(source_resolution)][/COLOR] | Info: [COLOR $VAR[ColorHighlight]]$INFO[Window().Property(source_info)][/COLOR]</label>
+                </control>
+            </control>
         </control>
     </controls>
 </window>
