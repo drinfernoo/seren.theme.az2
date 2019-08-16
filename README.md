@@ -8,6 +8,8 @@ Requirements:
 * Seren - 1.3.6 or greater
 * Arctic Zephyr 2 - 0.9.42 or greater
 
+**This theme WILL NOT work correctly with any skin BESIDES Arctic Zephyr 2.**
+
 To install this theme in Seren, navigate to:
 
 `Seren -> Settings -> Theme Manager -> Install Theme -> Web Location`
@@ -19,14 +21,12 @@ You can also download the `.zip` file directly from the same URL, and install it
 
 `Seren -> Settings -> Theme Manager -> Install Theme -> Browse`
 
-This theme supports the display of clearlogo artwork in Arctic Zephyr 2, by enabling it at:
-
-`Settings -> Skin Settings -> Furniture -> Clearlogo`
-
-This theme will use the skin's highlight color in its accent palette, so it's recommended to set it for the best experience:
+This theme respects various settings from Arctic Zephyr 2, including:
+* `Settings -> Skin Settings -> Furniture -> Clearlogo`
 * `Settings -> Skin Settings -> Miscellaneous -> Highlight color`
+* `Settings -> Skin Settings -> Library -> Mirror mediainfo viewtypes`
 
-Another consideration is the viewtype used for browsing, so for visual continuity, it's recommended that one of the following viewtypes be used:
+For visual continuity, it's recommended that one of the following viewtypes be used:
 * Media Info - 501
 * Info Wall - 514
 
