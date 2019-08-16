@@ -31,6 +31,28 @@
         <!-- Top Header  -->
         <control type="group">
             
+            <!-- Library Location -->
+            <control type="group">
+                <align>left</align>
+                <aligny>top</aligny>
+                <top>-900</top>
+                <left>80</left>
+                
+                <control type="label">
+                    <font>font_topbar</font>
+                    <textcolor>main_fg_100</textcolor>
+                    <label>Movies</label>
+                    <visible>!Skin.HasSetting(DisableHeader) + String.IsEqual(Window().Property(item.info.mediatype), movie)</visible>
+                </control>
+                
+                <control type="label">
+                    <font>font_topbar</font>
+                    <textcolor>main_fg_100</textcolor>
+                    <label>TV shows</label>
+                    <visible>!Skin.HasSetting(DisableHeader) + !String.IsEqual(Window().Property(item.info.mediatype), movie)</visible>
+                </control>
+            </control>
+            
             <!-- Clearlogo -->
             <control type="image" id="1001">
                 <centerleft>50%</centerleft>
