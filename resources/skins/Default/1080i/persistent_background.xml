@@ -51,7 +51,7 @@
                 <font>font_byline</font>
                 <textcolor>main_fg_70</textcolor>
                 <label>$INFO[Window().Property(item.info.title)]</label>
-                <visible>[!Skin.HasSetting(EnableClearlogo) | String.IsEmpty(Window().Property(item.art.clearlogo))] + String.IsEmpty(Window().Property(item.info.season))</visible>
+                <visible>[[!Skin.HasSetting(EnableClearlogo) + !Skin.HasSetting(DisableCenter)] | [Skin.HasSetting(EnableClearlogo) + [String.IsEmpty(Window().Property(item.art.clearlogo)) | String.IsEqual(Window().Property(item.art.clearlogo), None)]]] + String.IsEmpty(Window().Property(item.info.season))</visible>
             </control>
             
             <!-- Episode Fallback Label -->
@@ -64,7 +64,7 @@
                 <font>font_byline</font>
                 <textcolor>main_fg_70</textcolor>
                 <label>$INFO[Window().Property(item.info.tvshowtitle)]</label>
-                <visible>[!Skin.HasSetting(EnableClearlogo) | String.IsEmpty(Window().Property(item.art.clearlogo))] + !String.IsEmpty(Window().Property(item.info.season))</visible>
+                <visible>[[!Skin.HasSetting(EnableClearlogo) + !Skin.HasSetting(DisableCenter)] | [Skin.HasSetting(EnableClearlogo) + [String.IsEmpty(Window().Property(item.art.clearlogo)) | String.IsEqual(Window().Property(item.art.clearlogo), None)]]] + !String.IsEmpty(Window().Property(item.info.season))</visible>
             </control>
         </control>
         
