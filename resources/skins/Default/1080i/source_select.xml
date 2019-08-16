@@ -44,6 +44,8 @@
             </control>
         </control>
 
+        Skin.HasSetting(LandscapeArt)
+        
         <!-- Side Info -->
         <control type="group">
             <top>180</top>
@@ -57,6 +59,13 @@
                     <width>730</width>
                     <height>423.21</height>
                     <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.fanart)]</texture>
+                    <visible>!Skin.HasSetting(LandscapeArt)</visible>
+                </control>
+                <control type="image">
+                    <width>730</width>
+                    <height>423.21</height>
+                    <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.landscape)]</texture>
+                    <visible>Skin.HasSetting(LandscapeArt)</visible>
                 </control>
                 <control type="image">
                     <top>0</top>
@@ -65,7 +74,7 @@
                     <height>390</height>
                     <texture background="true">$INFO[Window().Property(item.art.clearlogo)]</texture>
                     <aspectratio align="right" aligny="bottom">keep</aspectratio>
-                    <visible>Skin.HasSetting(EnableClearlogo)</visible>
+                    <visible>Skin.HasSetting(EnableClearlogo) + !Skin.HasSetting(LandscapeArt)</visible>
                 </control>
             </control>
 
@@ -123,6 +132,13 @@
                     <width>730</width>
                     <height>423.21</height>
                     <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.fanart)]</texture>
+                    <visible>!Skin.HasSetting(LandscapeArt)</visible>
+                </control>
+                <control type="image">
+                    <width>730</width>
+                    <height>423.21</height>
+                    <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.landscape)]</texture>
+                    <visible>Skin.HasSetting(LandscapeArt)</visible>
                 </control>
                 <control type="image">
                     <top>0</top>
@@ -131,7 +147,7 @@
                     <height>390</height>
                     <texture background="true">$INFO[Window().Property(item.art.clearlogo)]</texture>
                     <aspectratio align="right" aligny="bottom">keep</aspectratio>
-                    <visible>Skin.HasSetting(EnableClearlogo)</visible>
+                    <visible>Skin.HasSetting(EnableClearlogo) + !Skin.HasSetting(LandscapeArt)</visible>
                 </control>
             </control>
 

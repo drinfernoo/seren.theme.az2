@@ -25,6 +25,7 @@ This theme respects various settings from Arctic Zephyr 2, including:
 * `Settings -> Skin Settings -> Furniture -> Clearlogo`
 * `Settings -> Skin Settings -> Miscellaneous -> Highlight color`
 * `Settings -> Skin Settings -> Library -> Mirror mediainfo viewtypes`
+* `Settings -> Skin Settings -> Library -> Landscape art`
 
 For visual continuity, it's recommended that one of the following viewtypes be used:
 * Media Info - 501
