@@ -6,17 +6,28 @@
     </coordinates>
     <controls>
         
-        <!-- Fanart Backdrop -->
+        <!-- Background -->
         <control type="group">
             <include>Dimensions_Fullscreen</include>
+            
+            <!-- Fanart -->
             <control type="image">
                 <texture background="true">$INFO[Window().Property(item.art.fanart)]</texture>
+                <visible>!String.IsEmpty(Window().Property(item.art.fanart))</visible>
             </control>
+            
+            <!-- Fallback Background -->
+            <control type="image">
+                <texture background="true" colordiffuse="main_bg_100">$INFO[Window().Property(texture.white)]</texture>
+                <visible>String.IsEmpty(Window().Property(item.art.fanart))</visible>
+            </control>
+            
+            <!-- Shaded Overlay -->
             <control type="image">
                 <texture colordiffuse="main_bg_70">common/bg.jpg</texture>
             </control>
         </control>
-
+        
         <!-- Top Header  -->
         <control type="group">
             
