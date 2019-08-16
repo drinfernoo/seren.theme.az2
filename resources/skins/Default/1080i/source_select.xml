@@ -542,6 +542,8 @@
             <control type="group">
                 <top>-15</top>
                 <left>-15</left>
+                
+                <!-- Movie Fanart -->
                 <control type="image">
                     <width>760</width>
                     <height>443.33</height>
@@ -550,14 +552,28 @@
                     <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.fanart)]</texture>
                     <visible>!Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
                 </control>
+                
+                <!-- Movie Landscape -->
                 <control type="image">
                     <width>760</width>
                     <height>443.33</height>
                     <bordersize>15</bordersize>
                     <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
                     <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.landscape)]</texture>
-                    <visible>Skin.HasSetting(LandscapeArt) | !String.IsEmpty(Window().Property(item.info.season))</visible>
+                    <visible>Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
                 </control>
+                
+                <!-- Episode Thumb -->
+                <control type="image">
+                    <width>760</width>
+                    <height>443.33</height>
+                    <bordersize>15</bordersize>
+                    <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                    <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.thumb)]</texture>
+                    <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
+                </control>
+                
+                <!-- Movie Clearlogo -->
                 <control type="image">
                     <right>50</right>
                     <bottom>510</bottom>
@@ -565,7 +581,18 @@
                     <height>390</height>
                     <texture background="true">$INFO[Window().Property(item.art.clearlogo)]</texture>
                     <aspectratio align="right" aligny="bottom">keep</aspectratio>
-                    <visible>Skin.HasSetting(EnableClearlogo) + [!Skin.HasSetting(LandscapeArt) | !String.IsEmpty(Window().Property(item.info.season))]</visible>
+                    <visible>!Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
+                </control>
+                
+                <!-- Episode Clearlogo -->
+                <control type="image">
+                    <right>50</right>
+                    <bottom>510</bottom>
+                    <width>200</width>
+                    <height>390</height>
+                    <texture background="true">$INFO[Window().Property(item.art.clearlogo)]</texture>
+                    <aspectratio align="right" aligny="bottom">keep</aspectratio>
+                    <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
                 </control>
             </control>
 
@@ -621,6 +648,8 @@
             <control type="group">
                 <top>-15</top>
                 <left>-15</left>
+                
+                <!-- Movie Fanart -->
                 <control type="image">
                     <width>760</width>
                     <height>443.33</height>
@@ -629,14 +658,28 @@
                     <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.fanart)]</texture>
                     <visible>!Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
                 </control>
+                
+                <!-- Movie Landscape -->
                 <control type="image">
                     <width>760</width>
                     <height>443.33</height>
                     <bordersize>15</bordersize>
                     <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
                     <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.landscape)]</texture>
-                    <visible>Skin.HasSetting(LandscapeArt) | !String.IsEmpty(Window().Property(item.info.season))</visible>
+                    <visible>Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
                 </control>
+                
+                <!-- Episode Thumb -->
+                <control type="image">
+                    <width>760</width>
+                    <height>443.33</height>
+                    <bordersize>15</bordersize>
+                    <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                    <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.thumb)]</texture>
+                    <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
+                </control>
+                
+                <!-- Movie Clearlogo -->
                 <control type="image">
                     <right>50</right>
                     <bottom>510</bottom>
@@ -644,7 +687,18 @@
                     <height>390</height>
                     <texture background="true">$INFO[Window().Property(item.art.clearlogo)]</texture>
                     <aspectratio align="right" aligny="bottom">keep</aspectratio>
-                    <visible>Skin.HasSetting(EnableClearlogo) + [!Skin.HasSetting(LandscapeArt) | !String.IsEmpty(Window().Property(item.info.season))]</visible>
+                    <visible>!Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
+                </control>
+                
+                <!-- Episode Clearlogo -->
+                <control type="image">
+                    <right>50</right>
+                    <bottom>510</bottom>
+                    <width>200</width>
+                    <height>390</height>
+                    <texture background="true">$INFO[Window().Property(item.art.clearlogo)]</texture>
+                    <aspectratio align="right" aligny="bottom">keep</aspectratio>
+                    <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
                 </control>
             </control>
 
