@@ -88,6 +88,16 @@
                 <label>$INFO[Window().Property(item.info.tvshowtitle)]</label>
                 <visible>[!Skin.HasSetting(EnableClearlogo) | String.IsEmpty(Window().Property(item.art.clearlogo))] + !String.IsEmpty(Window().Property(item.info.season))</visible>
             </control>
+            
+            <!-- Clock & Weather -->
+            <control type="group">
+                <aligny>top</aligny>
+                <top>-900</top>
+                
+                <include content="Topbar_Right">
+                    <param name="fgcolor" value="main_fg" />
+                </include>
+            </control>
         </control>
         
         <!-- Sources List, Unmirrored -->

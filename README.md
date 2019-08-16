@@ -23,6 +23,7 @@ You can also download the `.zip` file directly from the same URL, and install it
 
 This theme respects various settings from Arctic Zephyr 2, including:
 * `Settings -> Skin Settings -> Furniture -> Library location`
+* `Settings -> Skin Settings -> Furniture -> Clock and weather`
 * `Settings -> Skin Settings -> Furniture -> Clearlogo`
 * `Settings -> Skin Settings -> Miscellaneous -> Highlight color`
 * `Settings -> Skin Settings -> Library -> Mirror mediainfo viewtypes`
