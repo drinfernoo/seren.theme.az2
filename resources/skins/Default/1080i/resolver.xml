@@ -41,7 +41,7 @@
                 <visible>Skin.HasSetting(EnableClearlogo)</visible>
             </control>
             
-            <!-- Fallback Label -->
+            <!-- Movie Fallback Label -->
             <control type="label">
                 <centerleft>50%</centerleft>
                 <aligny>center</aligny>
@@ -51,16 +51,26 @@
                 <font>font_byline</font>
                 <textcolor>main_fg_70</textcolor>
                 <label>$INFO[Window().Property(item.info.title)]</label>
-                <visible>!Skin.HasSetting(EnableClearlogo) | String.IsEqual(Window().Property(item.art.clearlogo), None) | String.IsEqual(Window().Property(item.art.clearlogo), )</visible>
+                <visible>[!Skin.HasSetting(EnableClearlogo) | String.IsEmpty(Window().Property(item.art.clearlogo))] + String.IsEmpty(Window().Property(item.info.season))</visible>
+            </control>
+            
+            <!-- Episode Fallback Label -->
+            <control type="label">
+                <centerleft>50%</centerleft>
+                <aligny>center</aligny>
+                <align>center</align>
+                <top>30</top>
+                <height>120</height>
+                <font>font_byline</font>
+                <textcolor>main_fg_70</textcolor>
+                <label>$INFO[Window().Property(item.info.tvshowtitle)]</label>
+                <visible>[!Skin.HasSetting(EnableClearlogo) | String.IsEmpty(Window().Property(item.art.clearlogo))] + !String.IsEmpty(Window().Property(item.info.season))</visible>
             </control>
         </control>
-
-        <control type="group">
-            <left>804</left>
         
-            <!-- Notification -->
+        <!-- Notification -->
             <control type="label">
-                <font>font_byline</font>
+                <font>font_info_buttons</font>
                 <centerleft>50%</centerleft>
                 <centertop>50%</centertop>
                 <align>center</align>
@@ -69,6 +79,9 @@
                 <visible>String.IsEqual(Window().Property(process_started),false)</visible>
                 <label>$INFO[Window().Property(notification_text)]</label>
             </control>
+
+        <control type="group">
+            <left>804</left>
             
             <control type="group">
                 <centerleft>50%</centerleft>
@@ -79,7 +92,7 @@
                 <!-- Stream Label -->
                 <control type="label">
                     <centertop>50%</centertop>
-                    <font>font_byline</font>
+                    <font>font_info_buttons</font>
                     <align>center</align>
                     <textcolor>main_fg_100</textcolor>
                     <label>[COLOR $VAR[ColorHighlight]]$INFO[Window().Property(release_title)][/COLOR]</label>
@@ -88,7 +101,7 @@
                 <!-- Provider Info -->
                 <control type="label">
                     <top>60</top>
-                    <font>font_byline</font>
+                    <font>font_info_buttons</font>
                     <align>center</align>
                     <textcolor>main_fg_100</textcolor>
                     <label>Provider: [COLOR $VAR[ColorHighlight]]$INFO[Window().Property(debrid_provider)][/COLOR] | Source: [COLOR $VAR[ColorHighlight]]$INFO[Window().Property(source_provider)][/COLOR]</label>
@@ -97,7 +110,7 @@
                 <!-- Stream Metadata -->
                 <control type="label">
                     <top>124</top>
-                    <font>font_byline</font>
+                    <font>font_info_buttons</font>
                     <align>center</align>
                     <textcolor>main_fg_100</textcolor>
                     <label>Resolution: [COLOR $VAR[ColorHighlight]]$INFO[Window().Property(source_resolution)][/COLOR] | Info: [COLOR $VAR[ColorHighlight]]$INFO[Window().Property(source_info)][/COLOR]</label>

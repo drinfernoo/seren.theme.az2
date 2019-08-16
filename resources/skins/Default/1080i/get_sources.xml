@@ -41,7 +41,7 @@
                 <visible>Skin.HasSetting(EnableClearlogo)</visible>
             </control>
             
-            <!-- Fallback Label -->
+            <!-- Movie Fallback Label -->
             <control type="label">
                 <centerleft>50%</centerleft>
                 <aligny>center</aligny>
@@ -51,13 +51,26 @@
                 <font>font_byline</font>
                 <textcolor>main_fg_70</textcolor>
                 <label>$INFO[Window().Property(item.info.title)]</label>
-                <visible>!Skin.HasSetting(EnableClearlogo) | String.IsEqual(Window().Property(item.art.clearlogo), None) | String.IsEqual(Window().Property(item.art.clearlogo), )</visible>
+                <visible>[!Skin.HasSetting(EnableClearlogo) | String.IsEmpty(Window().Property(item.art.clearlogo))] + String.IsEmpty(Window().Property(item.info.season))</visible>
+            </control>
+            
+            <!-- Episode Fallback Label -->
+            <control type="label">
+                <centerleft>50%</centerleft>
+                <aligny>center</aligny>
+                <align>center</align>
+                <top>30</top>
+                <height>120</height>
+                <font>font_byline</font>
+                <textcolor>main_fg_70</textcolor>
+                <label>$INFO[Window().Property(item.info.tvshowtitle)]</label>
+                <visible>[!Skin.HasSetting(EnableClearlogo) | String.IsEmpty(Window().Property(item.art.clearlogo))] + !String.IsEmpty(Window().Property(item.info.season))</visible>
             </control>
         </control>
 
         <!-- Notification -->
         <control type="label">
-            <font>font_byline</font>
+            <font>font_info_buttons</font>
             <centerleft>50%</centerleft>
             <centertop>50%</centertop>
             <align>center</align>
@@ -250,36 +263,40 @@
                 <left>-800</left>
                 <width>1920</width>
                 <align>center</align>
-                    
+                
+                <!-- Stream Counts -->
                 <control type="label">
                     <align>center</align>
                     <top>60</top>
-                    <font>font_byline</font>
+                    <font>font_info_buttons</font>
                     <textcolor>main_fg_100</textcolor>
                     <label>Torrents: [COLOR $VAR[ColorHighlight]]$INFO[Window().Property(total_torrents)][/COLOR] | Cached: [COLOR $VAR[ColorHighlight]]$INFO[Window().Property(cached_torrents)][/COLOR] | Hosters: [COLOR$VAR[ColorHighlight]]$INFO[Window().Property(hosters_sources)][/COLOR] | Cloud Files: [COLOR$VAR[ColorHighlight]]$INFO[Window().Property(cloud_sources)][/COLOR]</label>
                 </control>
 
+                <!-- Stream Resolutions -->
                 <control type="label">
                     <align>center</align>
                     <top>124</top>
-                    <font>font_byline</font>
+                    <font>font_info_buttons</font>
                     <textcolor>main_fg_100</textcolor>
                     <label>4k: [COLOR $VAR[ColorHighlight]]$INFO[Window().Property(4k_sources)][/COLOR] | 1080p: [COLOR $VAR[ColorHighlight]]$INFO[Window().Property(1080p_sources)][/COLOR] | 720p: [COLOR $VAR[ColorHighlight]]$INFO[Window().Property(720p_sources)][/COLOR] | SD: [COLOR $VAR[ColorHighlight]]$INFO[Window().Property(sd_sources)][/COLOR]</label>
                 </control>
 
+                <!-- Remaining Provider Count, >10 Providers -->
                 <control type="label">
                     <align>center</align>
                     <top>188</top>
-                    <font>font_byline</font>
+                    <font>font_info_buttons</font>
                     <textcolor>main_fg_100</textcolor>
                     <label>Remaining Providers: $INFO[Window().Property(remaining_providers_count)]</label>
                     <visible>Integer.IsGreaterOrEqual(Window().Property(remaining_providers_count),10)</visible>
                 </control>
                 
+                <!-- Remaining Provider Names, <10 Providers -->
                 <control type="label">
                     <align>center</align>
                     <top>192</top>
-                    <font>font_byline</font>
+                    <font>font_info_buttons</font>
                     <textcolor>main_fg_100</textcolor>
                     <label>$INFO[Window().Property(remaining_providers_list)]</label>
                     <visible>!Integer.IsGreaterOrEqual(Window().Property(remaining_providers_count),10)</visible>
