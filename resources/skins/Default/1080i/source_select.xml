@@ -612,8 +612,17 @@
                     <top>80</top>
                     <font>font_small</font>
                     <textcolor>main_fg_100</textcolor>
-                    <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
+                    <visible>!String.IsEmpty(Window().Property(item.info.season)) + ![String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible>
                     <label>$INFO[Window().Property(item.info.mpaa)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  $INFO[Window().Property(item.info.aired)]</label>
+                </control>
+                
+                <!-- Episode Info, Not Rated -->
+                <control type="label">
+                    <top>80</top>
+                    <font>font_small</font>
+                    <textcolor>main_fg_100</textcolor>
+                    <visible>!String.IsEmpty(Window().Property(item.info.season)) + [String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible>
+                    <label>Not Rated  [COLOR $VAR[ColorHighlight]]|[/COLOR]  $INFO[Window().Property(item.info.aired)]</label>
                 </control>
                 
                 <!-- Movie Info -->
@@ -621,8 +630,17 @@
                     <top>80</top>
                     <font>font_small</font>
                     <textcolor>main_fg_100</textcolor>
-                    <visible>String.IsEmpty(Window().Property(item.info.season))</visible>
+                    <visible>String.IsEmpty(Window().Property(item.info.season)) + ![String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible>
                     <label>$INFO[Window().Property(item.info.mpaa)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  $INFO[Window().Property(item.info.year)]</label>
+                </control>
+                
+                <!-- Movie Info, Not Rated -->
+                <control type="label">
+                    <top>80</top>
+                    <font>font_small</font>
+                    <textcolor>main_fg_100</textcolor>
+                    <visible>String.IsEmpty(Window().Property(item.info.season)) + [String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible>
+                    <label>Not Rated  [COLOR $VAR[ColorHighlight]]|[/COLOR]  $INFO[Window().Property(item.info.year)]</label>
                 </control>
 
                 <!-- Plot -->
@@ -718,8 +736,17 @@
                     <top>80</top>
                     <font>font_small</font>
                     <textcolor>main_fg_100</textcolor>
-                    <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
+                    <visible>!String.IsEmpty(Window().Property(item.info.season)) + ![String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible>
                     <label>$INFO[Window().Property(item.info.mpaa)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  $INFO[Window().Property(item.info.aired)]</label>
+                </control>
+                
+                <!-- Episode Info, Not Rated -->
+                <control type="label">
+                    <top>80</top>
+                    <font>font_small</font>
+                    <textcolor>main_fg_100</textcolor>
+                    <visible>!String.IsEmpty(Window().Property(item.info.season)) + [String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible>
+                    <label>Not Rated  [COLOR $VAR[ColorHighlight]]|[/COLOR]  $INFO[Window().Property(item.info.aired)]</label>
                 </control>
                 
                 <!-- Movie Info -->
@@ -727,8 +754,17 @@
                     <top>80</top>
                     <font>font_small</font>
                     <textcolor>main_fg_100</textcolor>
-                    <visible>String.IsEmpty(Window().Property(item.info.season))</visible>
+                    <visible>String.IsEmpty(Window().Property(item.info.season)) + ![String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible>
                     <label>$INFO[Window().Property(item.info.mpaa)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  $INFO[Window().Property(item.info.year)]</label>
+                </control>
+                
+                <!-- Movie Info, Not Rated -->
+                <control type="label">
+                    <top>80</top>
+                    <font>font_small</font>
+                    <textcolor>main_fg_100</textcolor>
+                    <visible>String.IsEmpty(Window().Property(item.info.season)) + [String.IsEmpty(Window().Property(item.info.mpaa)) | String.IsEqual(Window().Property(item.info.mpaa), Not Rated) | String.IsEqual(Window().Property(item.info.mpaa), None)]</visible>
+                    <label>Not Rated  [COLOR $VAR[ColorHighlight]]|[/COLOR]  $INFO[Window().Property(item.info.year)]</label>
                 </control>
 
                 <!-- Plot -->
