@@ -551,93 +551,33 @@
                 <left>-15</left>
                                
                 <!-- Movie Fanart -->
-                <control type="group">
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" colordiffuse="PosterBack">$INFO[Window().Property(texture.white)]</texture>
-                        <visible>String.IsEmpty(Window().Property(item.art.fanart)) + Skin.HasSetting(DisableGeometric)</visible>
-                    </control>
-                    
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" colordiffuse="PosterBack">common/geometric.png</texture>
-                        <visible>String.IsEmpty(Window().Property(item.art.fanart)) + !Skin.HasSetting(DisableGeometric)</visible>
-                    </control>
-                    
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.fanart)]</texture>
-                        <visible>!String.IsEmpty(Window().Property(item.art.fanart)) + !Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
-                    </control>
+                <control type="image">
+                    <width>760</width>
+                    <height>443.33</height>
+                    <bordersize>15</bordersize>
+                    <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                    <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.fanart)]</texture>
+                    <visible>!Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
                 </control>
                 
                 <!-- Movie Landscape -->
-                <control type="group">
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" colordiffuse="PosterBack">$INFO[Window().Property(texture.white)]</texture>
-                        <visible>String.IsEmpty(Window().Property(item.art.landscape)) + Skin.HasSetting(DisableGeometric)</visible>
-                    </control>
-                    
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" colordiffuse="PosterBack">common/geometric.png</texture>
-                        <visible>String.IsEmpty(Window().Property(item.art.landscape)) + !Skin.HasSetting(DisableGeometric)</visible>
-                    </control>
-                    
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.landscape)]</texture>
-                        <visible>!String.IsEmpty(Window().Property(item.art.landscape)) + Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
-                    </control>
+                <control type="image">
+                    <width>760</width>
+                    <height>443.33</height>
+                    <bordersize>15</bordersize>
+                    <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                    <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.landscape)]</texture>
+                    <visible>Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
                 </control>
                 
                 <!-- Episode Thumb -->
-                <control type="group">
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" colordiffuse="PosterBack">$INFO[Window().Property(texture.white)]</texture>
-                        <visible>String.IsEmpty(Window().Property(item.art.thumb)) + Skin.HasSetting(DisableGeometric)</visible>
-                    </control>
-                    
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" colordiffuse="PosterBack">common/geometric.png</texture>
-                        <visible>String.IsEmpty(Window().Property(item.art.thumb)) + !Skin.HasSetting(DisableGeometric)</visible>
-                    </control>
-                    
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.thumb)]</texture>
-                        <visible>!String.IsEmpty(Window().Property(item.art.thumb)) + !String.IsEmpty(Window().Property(item.info.season))</visible>
-                    </control>
+                <control type="image">
+                    <width>760</width>
+                    <height>443.33</height>
+                    <bordersize>15</bordersize>
+                    <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                    <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.thumb)]</texture>
+                    <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
                 </control>
                 
                 <!-- Movie Clearlogo -->
@@ -735,93 +675,33 @@
                 <left>-15</left>
                 
                 <!-- Movie Fanart -->
-                <control type="group">
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" colordiffuse="PosterBack">$INFO[Window().Property(texture.white)]</texture>
-                        <visible>String.IsEmpty(Window().Property(item.art.fanart)) + Skin.HasSetting(DisableGeometric)</visible>
-                    </control>
-                    
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" colordiffuse="PosterBack">common/geometric.png</texture>
-                        <visible>String.IsEmpty(Window().Property(item.art.fanart)) + !Skin.HasSetting(DisableGeometric)</visible>
-                    </control>
-                    
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.fanart)]</texture>
-                        <visible>!String.IsEmpty(Window().Property(item.art.fanart)) + !Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
-                    </control>
+                <control type="image">
+                    <width>760</width>
+                    <height>443.33</height>
+                    <bordersize>15</bordersize>
+                    <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                    <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.fanart)]</texture>
+                    <visible>!Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
                 </control>
                 
                 <!-- Movie Landscape -->
-                <control type="group">
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" colordiffuse="PosterBack">$INFO[Window().Property(texture.white)]</texture>
-                        <visible>String.IsEmpty(Window().Property(item.art.landscape)) + Skin.HasSetting(DisableGeometric)</visible>
-                    </control>
-                    
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" colordiffuse="PosterBack">common/geometric.png</texture>
-                        <visible>String.IsEmpty(Window().Property(item.art.landscape)) + !Skin.HasSetting(DisableGeometric)</visible>
-                    </control>
-                    
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.landscape)]</texture>
-                        <visible>!String.IsEmpty(Window().Property(item.art.landscape)) + Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
-                    </control>
+                <control type="image">
+                    <width>760</width>
+                    <height>443.33</height>
+                    <bordersize>15</bordersize>
+                    <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                    <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.landscape)]</texture>
+                    <visible>Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
                 </control>
                 
                 <!-- Episode Thumb -->
-                <control type="group">
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" colordiffuse="PosterBack">$INFO[Window().Property(texture.white)]</texture>
-                        <visible>String.IsEmpty(Window().Property(item.art.thumb)) + Skin.HasSetting(DisableGeometric)</visible>
-                    </control>
-                    
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" colordiffuse="PosterBack">common/geometric.png</texture>
-                        <visible>String.IsEmpty(Window().Property(item.art.thumb)) + !Skin.HasSetting(DisableGeometric)</visible>
-                    </control>
-                    
-                    <control type="image">
-                        <width>760</width>
-                        <height>443.33</height>
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.thumb)]</texture>
-                        <visible>!String.IsEmpty(Window().Property(item.art.thumb)) + !String.IsEmpty(Window().Property(item.info.season))</visible>
-                    </control>
+                <control type="image">
+                    <width>760</width>
+                    <height>443.33</height>
+                    <bordersize>15</bordersize>
+                    <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                    <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.thumb)]</texture>
+                    <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
                 </control>
                 
                 <!-- Movie Clearlogo -->
