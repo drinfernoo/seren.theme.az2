@@ -27,6 +27,7 @@ This theme respects various settings from Arctic Zephyr 2, including:
 * `Settings -> Skin Settings -> Furniture -> Clock and weather`
 * `Settings -> Skin Settings -> Furniture -> Clearlogo`
 * `Settings -> Skin Settings -> Miscellaneous -> Highlight color`
+* `Settings -> Skin Settings -> Miscellaneous -> Geometric pattern on panels`
 * `Settings -> Skin Settings -> Library -> Mirror mediainfo viewtypes`
 * `Settings -> Skin Settings -> Library -> Landscape art`
 
