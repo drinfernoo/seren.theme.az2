@@ -549,25 +549,75 @@
             <control type="group">
                 <top>-15</top>
                 <left>-15</left>
-                               
-                <!-- Movie Fanart -->
-                <control type="image">
-                    <width>760</width>
-                    <height>443.33</height>
-                    <bordersize>15</bordersize>
-                    <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                    <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.fanart)]</texture>
-                    <visible>!Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    
+                <!-- Movie Artwork -->
+                <control type="group">
+                    <visible>![String.IsEmpty(Window().Property(item.art.fanart)) | String.IsEqual(Window().Property(item.art.fanart), None)] | ![String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)]</visible>
+                    
+                    <!-- Movie Fanart -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.fanart)]</texture>
+                        <visible>!Skin.HasSetting(LandscapeArt) + ![String.IsEmpty(Window().Property(item.art.fanart)) | String.IsEqual(Window().Property(item.art.fanart), None)] + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
+                    
+                    <!-- Movie Landscape -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.landscape)]</texture>
+                        <visible>Skin.HasSetting(LandscapeArt) + ![String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)] + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
                 </control>
-                
-                <!-- Movie Landscape -->
-                <control type="image">
-                    <width>760</width>
-                    <height>443.33</height>
-                    <bordersize>15</bordersize>
-                    <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                    <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.landscape)]</texture>
-                    <visible>Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    
+                <!-- Movie Artwork Fallbacks -->
+                <control type="group">
+                    <visible>[String.IsEmpty(Window().Property(item.art.fanart)) | String.IsEqual(Window().Property(item.art.fanart), None)] | [String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)]</visible>
+                    
+                    <!-- Movie Fanart Fallback -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.fanart)]</texture>
+                        <visible>Skin.HasSetting(LandscapeArt) + [String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)] + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
+                    
+                    <!-- Movie Landscape Fallback -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.landscape)]</texture>
+                        <visible>!Skin.HasSetting(LandscapeArt) + [String.IsEmpty(Window().Property(item.art.fanart)) | String.IsEqual(Window().Property(item.art.fanart), None)] + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
+                    
+                    <!-- Solid Fallback -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" colordiffuse="PosterBack">$INFO[Window().Property(texture.white)]</texture>
+                        <visible>[String.IsEmpty(Window().Property(item.art.fanart)) | String.IsEqual(Window().Property(item.art.fanart), None)] + [String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)] + Skin.HasSetting(DisbaleGeometric) + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
+                    
+                    <!-- Geometric Fallback -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" colordiffuse="PosterBack">common/geometric.png</texture>
+                        <visible>[String.IsEmpty(Window().Property(item.art.fanart)) | String.IsEqual(Window().Property(item.art.fanart), None)] + [String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)] + !Skin.HasSetting(DisbaleGeometric) + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
                 </control>
                 
                 <!-- Episode Thumb -->
@@ -577,7 +627,52 @@
                     <bordersize>15</bordersize>
                     <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
                     <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.thumb)]</texture>
-                    <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
+                    <visible>![String.IsEmpty(Window().Property(item.art.thumb)) | String.IsEqual(Window().Property(item.art.thumb), None)] + !String.IsEmpty(Window().Property(item.info.season))</visible>
+                </control>
+                
+                <!-- Episode Artwork Fallbacks -->
+                <control type="group">
+                    <visible>[String.IsEmpty(Window().Property(item.art.thumb)) | String.IsEqual(Window().Property(item.art.thumb), None)]</visible>
+                    
+                    <!-- Episode Landscape Fallback -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.landscape)]</texture>
+                        <visible>[String.IsEmpty(Window().Property(item.art.thumb)) | String.IsEqual(Window().Property(item.art.thumb), None)] + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
+                    
+                    <!-- Episode Fanart Fallback -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.fanart)]</texture>
+                        <visible>[String.IsEmpty(Window().Property(item.art.thumb)) | String.IsEqual(Window().Property(item.art.thumb), None)] + [String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)] + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
+                    
+                    <!-- Solid Fallback -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" colordiffuse="PosterBack">$INFO[Window().Property(texture.white)]</texture>
+                        <visible>[String.IsEmpty(Window().Property(item.art.fanart)) | String.IsEqual(Window().Property(item.art.fanart), None)] + [String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)] + [String.IsEmpty(Window().Property(item.art.thumb)) | String.IsEqual(Window().Property(item.art.thumb), None)] + Skin.HasSetting(DisbaleGeometric) + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
+                    
+                    <!-- Geometric Fallback -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" colordiffuse="PosterBack">common/geometric.png</texture>
+                        <visible>[String.IsEmpty(Window().Property(item.art.fanart)) | String.IsEqual(Window().Property(item.art.fanart), None)] + [String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)] + [String.IsEmpty(Window().Property(item.art.thumb)) | String.IsEqual(Window().Property(item.art.thumb), None)] + !Skin.HasSetting(DisbaleGeometric) + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
                 </control>
                 
                 <!-- Movie Clearlogo -->
@@ -673,25 +768,75 @@
             <control type="group">
                 <top>-15</top>
                 <left>-15</left>
-                
-                <!-- Movie Fanart -->
-                <control type="image">
-                    <width>760</width>
-                    <height>443.33</height>
-                    <bordersize>15</bordersize>
-                    <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                    <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.fanart)]</texture>
-                    <visible>!Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    
+                <!-- Movie Artwork -->
+                <control type="group">
+                    <visible>![String.IsEmpty(Window().Property(item.art.fanart)) | String.IsEqual(Window().Property(item.art.fanart), None)] | ![String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)]</visible>
+                    
+                    <!-- Movie Fanart -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.fanart)]</texture>
+                        <visible>!Skin.HasSetting(LandscapeArt) + ![String.IsEmpty(Window().Property(item.art.fanart)) | String.IsEqual(Window().Property(item.art.fanart), None)] + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
+                    
+                    <!-- Movie Landscape -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.landscape)]</texture>
+                        <visible>Skin.HasSetting(LandscapeArt) + ![String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)] + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
                 </control>
-                
-                <!-- Movie Landscape -->
-                <control type="image">
-                    <width>760</width>
-                    <height>443.33</height>
-                    <bordersize>15</bordersize>
-                    <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                    <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.landscape)]</texture>
-                    <visible>Skin.HasSetting(LandscapeArt) + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    
+                <!-- Movie Artwork Fallbacks -->
+                <control type="group">
+                    <visible>[String.IsEmpty(Window().Property(item.art.fanart)) | String.IsEqual(Window().Property(item.art.fanart), None)] | [String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)]</visible>
+                    
+                    <!-- Movie Fanart Fallback -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.fanart)]</texture>
+                        <visible>Skin.HasSetting(LandscapeArt) + [String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)] + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
+                    
+                    <!-- Movie Landscape Fallback -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.landscape)]</texture>
+                        <visible>!Skin.HasSetting(LandscapeArt) + [String.IsEmpty(Window().Property(item.art.fanart)) | String.IsEqual(Window().Property(item.art.fanart), None)] + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
+                    
+                    <!-- Solid Fallback -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" colordiffuse="PosterBack">$INFO[Window().Property(texture.white)]</texture>
+                        <visible>[String.IsEmpty(Window().Property(item.art.fanart)) | String.IsEqual(Window().Property(item.art.fanart), None)] + [String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)] + Skin.HasSetting(DisbaleGeometric) + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
+                    
+                    <!-- Geometric Fallback -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" colordiffuse="PosterBack">common/geometric.png</texture>
+                        <visible>[String.IsEmpty(Window().Property(item.art.fanart)) | String.IsEqual(Window().Property(item.art.fanart), None)] + [String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)] + !Skin.HasSetting(DisbaleGeometric) + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
                 </control>
                 
                 <!-- Episode Thumb -->
@@ -701,7 +846,52 @@
                     <bordersize>15</bordersize>
                     <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
                     <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.thumb)]</texture>
-                    <visible>!String.IsEmpty(Window().Property(item.info.season))</visible>
+                    <visible>![String.IsEmpty(Window().Property(item.art.thumb)) | String.IsEqual(Window().Property(item.art.thumb), None)] + !String.IsEmpty(Window().Property(item.info.season))</visible>
+                </control>
+                
+                <!-- Episode Artwork Fallbacks -->
+                <control type="group">
+                    <visible>[String.IsEmpty(Window().Property(item.art.thumb)) | String.IsEqual(Window().Property(item.art.thumb), None)]</visible>
+                    
+                    <!-- Episode Landscape Fallback -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.landscape)]</texture>
+                        <visible>[String.IsEmpty(Window().Property(item.art.thumb)) | String.IsEqual(Window().Property(item.art.thumb), None)] + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
+                    
+                    <!-- Episode Fanart Fallback -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" diffuse="diffuse/landscape-info.png">$INFO[Window().Property(item.art.fanart)]</texture>
+                        <visible>[String.IsEmpty(Window().Property(item.art.thumb)) | String.IsEqual(Window().Property(item.art.thumb), None)] + [String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)] + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
+                    
+                    <!-- Solid Fallback -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" colordiffuse="PosterBack">$INFO[Window().Property(texture.white)]</texture>
+                        <visible>[String.IsEmpty(Window().Property(item.art.fanart)) | String.IsEqual(Window().Property(item.art.fanart), None)] + [String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)] + [String.IsEmpty(Window().Property(item.art.thumb)) | String.IsEqual(Window().Property(item.art.thumb), None)] + Skin.HasSetting(DisbaleGeometric) + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
+                    
+                    <!-- Geometric Fallback -->
+                    <control type="image">
+                        <width>760</width>
+                        <height>443.33</height>
+                        <bordersize>15</bordersize>
+                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                        <texture background="true" colordiffuse="PosterBack">common/geometric.png</texture>
+                        <visible>[String.IsEmpty(Window().Property(item.art.fanart)) | String.IsEqual(Window().Property(item.art.fanart), None)] + [String.IsEmpty(Window().Property(item.art.landscape)) | String.IsEqual(Window().Property(item.art.landscape), None)] + [String.IsEmpty(Window().Property(item.art.thumb)) | String.IsEqual(Window().Property(item.art.thumb), None)] + !Skin.HasSetting(DisbaleGeometric) + String.IsEmpty(Window().Property(item.info.season))</visible>
+                    </control>
                 </control>
                 
                 <!-- Movie Clearlogo -->
