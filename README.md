@@ -31,6 +31,10 @@ This theme respects various settings from Arctic Zephyr 2, including:
 * `Settings -> Skin Settings -> Library -> Mirror mediainfo viewtypes`
 * `Settings -> Skin Settings -> Library -> Landscape art`
 
+Also, if the theme is used on a setup with the Artwork Helper add-on installed, and "Extra Fanart" enabled in the AZ2 topbar,
+multiple fanarts wll be cycled randomly as the backdrop for this theme. This functionality currently **does not** support different
+"autoscroll" timings in AZ2.
+
 For visual continuity, it's recommended that one of the following viewtypes be used:
 * Media Info - 501
 * Info Wall - 514
