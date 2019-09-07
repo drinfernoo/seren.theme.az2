@@ -5,7 +5,7 @@ Source Select                                   | Provider Manager
 ![Source Select](https://imgur.com/IDjD00d.jpg) | ![Provider Manager](https://imgur.com/r3EvhRq.jpg)
 
 Requirements:
-* Seren - 1.3.6 or greater
+* Seren - 1.4.9 or greater
 * Arctic Zephyr 2 - 0.9.42 or greater
 
 **This theme WILL NOT work correctly with any skin BESIDES Arctic Zephyr 2.**
@@ -34,6 +34,8 @@ This theme respects various settings from Arctic Zephyr 2, including:
 Also, if the theme is used on a setup with the Artwork Helper add-on installed, and "Extra Fanart" enabled in the AZ2 topbar,
 multiple fanarts wll be cycled randomly as the backdrop for this theme. This functionality currently **does not** support different
 "autoscroll" timings in AZ2.
+
+As of Seren 1.4.9, this theme also support skinning the Next Episode dialog provided by Seren.
 
 For visual continuity, it's recommended that one of the following viewtypes be used:
 * Media Info - 501
