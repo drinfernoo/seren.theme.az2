@@ -7,6 +7,7 @@
     <controls>
         <control type="group">
             
+            <!-- Shadow -->
             <control type="image">
                 <height>300</height>
                 <top>0</top>
@@ -19,23 +20,40 @@
                 <top>view_pad</top>
                 <height>163</height>
                 
-                <!-- Thumb -->
+                <!-- Episode Preview -->
                 <control type="group">
+                    <left>-15</left>
+                    <top>-15</top>
+                    <right>-15</right>
+                    <bottom>-15</bottom>
                     <width>290</width>
                     
+                    <!-- Fallback Thumb -->
                     <control type="group">
-                        <left>-15</left>
-                        <top>-15</top>
-                        <right>-15</right>
-                        <bottom>-15</bottom>
-                    
+                        <visible>String.IsEmpty(Window.Property(item.art.landscape)) + String.IsEmpty(Window.Property(item.art.fanart)) + String.IsEmpty(Window.Property(item.art.thumb))</visible>
+                        
+                        <control type="image">
+                            <texture background="true" colordiffuse="PosterBack">common/geometric.png</texture>
+                            <bordersize>15</bordersize>
+                            <visible>!Skin.HasSetting(DisableGeometric)</visible>
+                        </control>
+                        
+                        <control type="image">
+                            <texture background="true" colordiffuse="PosterBack">$INFO[Window().Property(texture.white)]</texture>
+                            <bordersize>15</bordersize>
+                            <visible>Skin.HasSetting(DisableGeometric)</visible>
+                        </control>
+                    </control>
+                
+                    <!-- Thumb -->
+                    <control type="group">
                         <control type="image">
                             <texture background="true" diffuse="diffuse/landscape-small-wall.png">$INFO[Window.Property(item.art.landscape)]</texture>
                             <bordersize>15</bordersize>
                             <bordertexture border="30" colordiffuse="Shadow">common/shadow-15.png</bordertexture>
                             <aspectratio scalediffuse="true">scale</aspectratio>
-                            <visible>String.IsEmpty(Window.Property(item.art.fanart))</visible>
                         </control>
+                        
                         <control type="image">
                             <texture background="true" diffuse="diffuse/landscape-small-wall.png">$INFO[Window.Property(item.art.fanart)]</texture>
                             <bordersize>15</bordersize>
@@ -43,6 +61,7 @@
                             <aspectratio scalediffuse="true">scale</aspectratio>
                             <visible>String.IsEmpty(Window.Property(item.art.landscape))</visible>
                         </control>
+                        
                         <control type="image">
                             <texture background="true" diffuse="diffuse/landscape-small-wall.png">$INFO[Window.Property(item.art.thumb)]</texture>
                             <bordersize>15</bordersize>
@@ -52,13 +71,14 @@
                         </control>
                     </control>
                     
-                    <!-- <control type="progress" id="3014">
+                    
+                    <!-- Progress Bar -->
+                    <control type="progress" id="3014">
                         <height>8</height>
                         <bottom>0</bottom>
                         <left>0</left>
                         <right>0</right>
-                        <reveal>true</reveal>
-                    </control> -->
+                    </control>
                 </control>
                 
                 <!-- Labels -->
@@ -88,6 +108,7 @@
                         <orientation>horizontal</orientation>
                         <usecontrolcoords>true</usecontrolcoords>
                         <itemgap>0</itemgap>
+                        
                         <include content="Object_Info_Line_Label">
                             <param name="label" value="$INFO[Window.Property(item.info.tvshowtitle)]" />
                             <param name="textcolor" value="panel_fg_100" />
@@ -96,6 +117,7 @@
                             <param name="visible" value="true" />
                             <param name="id" value="90001" />
                         </include>
+                        
                         <!-- Further Items -->
                         <include content="Object_Info_Line_Label">
                             <param name="id" value="90002" />
@@ -103,18 +125,21 @@
                             <param name="textcolor" value="panel_fg_100" />
                             <param name="visible" value="true" />
                         </include>
+                        
                         <include content="Object_Info_Line_Label">
                             <param name="id" value="90003" />
                             <param name="label" value="$INFO[Window.Property(item.info.title)]" />
                             <param name="textcolor" value="panel_fg_100" />
                             <param name="visible" value="true" />
                         </include>
+                        
                         <include content="Object_Info_Line_Label">
                             <param name="id" value="90004" />
                             <param name="label" value="$INFO[Window.Property(item.info.aired)]" />
                             <param name="textcolor" value="panel_fg_100" />
                             <param name="visible" value="true" />
                         </include>
+                        
                         <include content="Object_Info_Line_Label">
                             <param name="id" value="90005" />
                             <param name="label" value="$INFO[Window.Property(item.info.rating)]" />
