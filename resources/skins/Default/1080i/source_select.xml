@@ -171,30 +171,11 @@
                     <left>20</left>
                     <right>20</right>
                     
-                    <!-- Resolution Icon -->
-                    <control type="group">
-                        <centertop>50%</centertop>
-                        <width>72</width>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_fg_90">flags/monochrome/resolution/480.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),SD)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_fg_90">flags/monochrome/resolution/720.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),720P)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_fg_90">flags/monochrome/resolution/1080.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),1080P)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_fg_90">flags/monochrome/resolution/2160.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),4k)</visible>
-                        </control>
+                    <control type="image">
+                        <centertop>50%</centertop> 
+                        <width>32</width> 
+                        <height>32</height> 
+                        <texture colordiffuse="main_fg_90">indicator/library.png</texture> 
                     </control>
                     
                     <control type="group">
@@ -202,7 +183,7 @@
                         
                         <!-- Stream Label -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <aligny>top</aligny>
                             <top>10</top>
@@ -213,29 +194,29 @@
                         
                         <!-- Stream Metadata, Torrents > 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), torrent) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Torrents = 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), torrent) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Torrents > 0.00 GB w/o Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -246,7 +227,7 @@
                         
                         <!-- Stream Metadata, Torrents = 0.00 GB w/o Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -257,29 +238,29 @@
                         
                         <!-- Stream Metadata, Hosters > 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), hoster) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Hosters = 0.00 GB w/ Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), hoster) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Hosters > 0.00 GB w/o Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -290,7 +271,7 @@
                         
                         <!-- Stream Metadata, Hosters = 0.00 GB w/o Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -316,30 +297,11 @@
                     <left>20</left>
                     <right>20</right>
                     
-                    <!-- Resolution Icon -->
-                    <control type="group">
-                        <centertop>50%</centertop>
-                        <width>72</width>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_bg_90">flags/monochrome/resolution/480.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),SD)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_bg_90">flags/monochrome/resolution/720.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),720P)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_bg_90">flags/monochrome/resolution/1080.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),1080P)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_bg_90">flags/monochrome/resolution/2160.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),4k)</visible>
-                        </control>
+                    <control type="image">
+                        <centertop>50%</centertop> 
+                        <width>32</width> 
+                        <height>32</height> 
+                        <texture colordiffuse="main_bg_90">indicator/library.png</texture> 
                     </control>
                     
                     <control type="group">
@@ -347,7 +309,7 @@
                         
                         <!-- Stream Label -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <aligny>top</aligny>
                             <top>10</top>
@@ -358,29 +320,29 @@
                         
                         <!-- Stream Metadata, Torrents > 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_bg_100</textcolor>
                             <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), torrent) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Torrents = 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_bg_100</textcolor>
                             <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), torrent) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Torrents > 0.00 GB w/o Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -391,7 +353,7 @@
                         
                         <!-- Stream Metadata, Torrents = 0.00 GB w/o Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -402,29 +364,29 @@
                         
                         <!-- Stream Metadata, Hosters > 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_bg_100</textcolor>
                             <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), hoster) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Hosters = 0.00 GB w/ Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_bg_100</textcolor>
                             <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), hoster) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Hosters > 0.00 GB w/o Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -435,7 +397,7 @@
                         
                         <!-- Stream Metadata, Hosters = 0.00 GB w/o Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -451,30 +413,11 @@
                     <left>20</left>
                     <right>20</right>
                     
-                    <!-- Resolution Icon -->
-                    <control type="group">
-                        <centertop>50%</centertop>
-                        <width>72</width>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_fg_100">flags/monochrome/resolution/480.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),SD)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_fg_100">flags/monochrome/resolution/720.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),720P)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_fg_100">flags/monochrome/resolution/1080.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),1080P)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_fg_100">flags/monochrome/resolution/2160.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),4k)</visible>
-                        </control>
+                    <control type="image">
+                        <centertop>50%</centertop> 
+                        <width>32</width> 
+                        <height>32</height> 
+                        <texture colordiffuse="main_bg_90">indicator/library.png</texture> 
                     </control>
                     
                     <control type="group">
@@ -482,7 +425,7 @@
                         
                         <!-- Stream Label -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <aligny>top</aligny>
                             <top>10</top>
@@ -493,29 +436,29 @@
                         
                         <!-- Stream Metadata, Torrents > 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), torrent) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Torrents = 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), torrent) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]</label>
                         </control>
                         
                         <!-- Stream Metadata, Torrents > 0.00 GB w/o Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -526,7 +469,7 @@
                         
                         <!-- Stream Metadata, Torrents = 0.00 GB w/o Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -537,29 +480,29 @@
                         
                         <!-- Stream Metadata, Hosters > 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), hoster) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Hosters = 0.00 GB w/ Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), hoster) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Hosters > 0.00 GB w/o Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -570,7 +513,7 @@
                         
                         <!-- Stream Metadata, Hosters = 0.00 GB w/o Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -1040,30 +983,11 @@
                     <left>20</left>
                     <right>20</right>
                     
-                    <!-- Resolution Icon -->
-                    <control type="group">
-                        <centertop>50%</centertop>
-                        <width>72</width>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_fg_90">flags/monochrome/resolution/480.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),SD)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_fg_90">flags/monochrome/resolution/720.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),720P)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_fg_90">flags/monochrome/resolution/1080.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),1080P)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_fg_90">flags/monochrome/resolution/2160.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),4k)</visible>
-                        </control>
+                    <control type="image">
+                        <centertop>50%</centertop> 
+                        <width>32</width> 
+                        <height>32</height> 
+                        <texture colordiffuse="main_fg_90">indicator/library.png</texture> 
                     </control>
                     
                     <control type="group">
@@ -1071,7 +995,7 @@
                         
                         <!-- Stream Label -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <aligny>top</aligny>
                             <top>10</top>
@@ -1082,29 +1006,29 @@
                         
                         <!-- Stream Metadata, Torrents > 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), torrent) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Torrents = 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), torrent) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Torrents > 0.00 GB w/o Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -1115,7 +1039,7 @@
                         
                         <!-- Stream Metadata, Torrents = 0.00 GB w/o Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -1126,29 +1050,29 @@
                         
                         <!-- Stream Metadata, Hosters > 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), hoster) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Hosters = 0.00 GB w/ Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), hoster) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Hosters > 0.00 GB w/o Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -1159,7 +1083,7 @@
                         
                         <!-- Stream Metadata, Hosters = 0.00 GB w/o Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -1185,30 +1109,11 @@
                     <left>20</left>
                     <right>20</right>
                     
-                    <!-- Resolution Icon -->
-                    <control type="group">
-                        <centertop>50%</centertop>
-                        <width>72</width>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_bg_90">flags/monochrome/resolution/480.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),SD)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_bg_90">flags/monochrome/resolution/720.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),720P)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_bg_90">flags/monochrome/resolution/1080.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),1080P)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_bg_90">flags/monochrome/resolution/2160.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),4k)</visible>
-                        </control>
+                    <control type="image">
+                        <centertop>50%</centertop> 
+                        <width>32</width> 
+                        <height>32</height> 
+                        <texture colordiffuse="main_bg_90">indicator/library.png</texture> 
                     </control>
                     
                     <control type="group">
@@ -1216,7 +1121,7 @@
                         
                         <!-- Stream Label -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <aligny>top</aligny>
                             <top>10</top>
@@ -1227,29 +1132,29 @@
                         
                         <!-- Stream Metadata, Torrents > 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_bg_100</textcolor>
                             <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), torrent) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Torrents = 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_bg_100</textcolor>
                             <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), torrent) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Torrents > 0.00 GB w/o Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -1260,7 +1165,7 @@
                         
                         <!-- Stream Metadata, Torrents = 0.00 GB w/o Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -1271,29 +1176,29 @@
                         
                         <!-- Stream Metadata, Hosters > 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_bg_100</textcolor>
                             <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), hoster) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Hosters = 0.00 GB w/ Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_bg_100</textcolor>
                             <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), hoster) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Hosters > 0.00 GB w/o Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -1304,7 +1209,7 @@
                         
                         <!-- Stream Metadata, Hosters = 0.00 GB w/o Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -1320,30 +1225,11 @@
                     <left>20</left>
                     <right>20</right>
                     
-                    <!-- Resolution Icon -->
-                    <control type="group">
-                        <centertop>50%</centertop>
-                        <width>72</width>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_fg_100">flags/monochrome/resolution/480.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),SD)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_fg_100">flags/monochrome/resolution/720.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),720P)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_fg_100">flags/monochrome/resolution/1080.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),1080P)</visible>
-                        </control>
-                        <control type="image">
-                            <aspectratio>keep</aspectratio>
-                            <texture colordiffuse="main_fg_100">flags/monochrome/resolution/2160.png</texture>
-                            <visible>String.Contains(ListItem.Property(quality),4k)</visible>
-                        </control>
+                    <control type="image">
+                        <centertop>50%</centertop> 
+                        <width>32</width> 
+                        <height>32</height> 
+                        <texture colordiffuse="main_bg_90">indicator/library.png</texture> 
                     </control>
                     
                     <control type="group">
@@ -1351,7 +1237,7 @@
                         
                         <!-- Stream Label -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <aligny>top</aligny>
                             <top>10</top>
@@ -1362,29 +1248,29 @@
                         
                         <!-- Stream Metadata, Torrents > 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), torrent) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Torrents = 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), torrent) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Torrents > 0.00 GB w/o Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -1395,7 +1281,7 @@
                         
                         <!-- Stream Metadata, Torrents = 0.00 GB w/o Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -1406,29 +1292,29 @@
                         
                         <!-- Stream Metadata, Hosters > 0.00 GB w/ Info -->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), hoster) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Hosters = 0.00 GB w/ Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), hoster) + !String.IsEmpty(ListItem.Property(info))</visible>
-                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(info)][/UPPERCASE]</label>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Hosters > 0.00 GB w/o Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -1439,7 +1325,7 @@
                         
                         <!-- Stream Metadata, Hosters = 0.00 GB w/o Info-->
                         <control type="label">
-                            <left>92</left>
+                            <left>52</left>
                             <right>92</right>
                             <top>24</top>
                             <font>font_small_bold</font>
@@ -1465,6 +1351,306 @@
             <orientation>vertical</orientation>
             <showonepage>false</showonepage>
             <onleft>1000</onleft>
+        </control>
+        
+        <!-- Info Icons -->
+        <control type="grouplist">
+            <visible>!Skin.HasSetting(DisableCodecs)</visible>
+            <orientation>horizontal</orientation>
+            <align>right</align>
+            <height>view_bottom</height>
+            <right>view_pad</right>
+            <left>view_pad</left>
+            <bottom>0</bottom>
+            <itemgap>20</itemgap>
+            <usecontrolcoords>true</usecontrolcoords>
+                
+            <!-- 3D -->
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>64</width>
+                <height>52</height>
+                <aspectratio align="left">keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/other/3D.png</texture>
+                <visible>String.Contains(ListItem.Property(info),3D)</visible>
+            </control>
+            
+            <!-- HDR -->
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>64</width>
+                <height>52</height>
+                <aspectratio align="left">keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/other/HDR.png</texture>
+                <visible>String.Contains(ListItem.Property(info),HDR)</visible>
+            </control>
+            
+            <!-- Source -->
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>62</width>
+                <height>52</height>
+                <aspectratio align="left">keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/other/bluray.png</texture>
+                <visible>String.Contains(ListItem.Property(info),BLURAY) | String.Contains(ListItem.Property(info),BDRIP) | String.Contains(ListItem.Property(info),BRRIP) | String.Contains(ListItem.Property(info),REMUX)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>62</width>
+                <height>52</height>
+                <aspectratio align="left">keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/other/hddvd.png</texture>
+                <visible>String.Contains(ListItem.Property(info),HDRIP)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>62</width>
+                <height>52</height>
+                <aspectratio align="left">keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/other/hdtv.png</texture>
+                <visible>String.Contains(ListItem.Property(info),HDTV)</visible>
+            </control>
+            
+            <!-- Resolution -->
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>64</width>
+                <height>42</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/resolution/2160.png</texture>
+                <visible>String.Contains(ListItem.Property(quality),4K)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>64</width>
+                <height>42</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/resolution/1080.png</texture>
+                <visible>String.Contains(ListItem.Property(quality),1080p)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>64</width>
+                <height>42</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/resolution/720.png</texture>
+                <visible>String.Contains(ListItem.Property(quality),720p)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>64</width>
+                <height>42</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/resolution/480.png</texture>
+                <visible>String.Contains(ListItem.Property(quality),SD)</visible>
+            </control>
+            
+            <!-- Video Codec -->
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/source/h264.png</texture>
+                <visible>String.Contains(ListItem.Property(info),AVC)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/source/h265.png</texture>
+                <visible>String.Contains(ListItem.Property(info),HEVC)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/source/xvid.png</texture>
+                <visible>String.Contains(ListItem.Property(info),XVID)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/source/xvid.png</texture>
+                <visible>String.Contains(ListItem.Property(info),DIVX)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/source/mp4.png</texture>
+                <visible>String.Contains(ListItem.Property(info),MP4)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/source/wmw.png</texture>
+                <visible>String.Contains(ListItem.Property(info),WMV</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/source/mpeg4.png</texture>
+                <visible>String.Contains(ListItem.Property(info),MPEG)</visible>
+            </control>
+            
+            <!-- Audio Codec -->
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/aac.png</texture>
+                <visible>String.Contains(ListItem.Property(info),AAC)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/dts.png</texture>
+                <visible>String.Contains(ListItem.Property(info),DTS)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/dtshd_ma.png</texture>
+                <visible>String.Contains(ListItem.Property(info),HD-MA)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/atmos.png</texture>
+                <visible>String.Contains(ListItem.Property(info),ATMOS)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/truehd.png</texture>
+                <visible>String.Contains(ListItem.Property(info),TRUEHD)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/eac3.png</texture>
+                <visible>String.Contains(ListItem.Property(info),DD+)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/dolbydigital.png</texture>
+                <visible>String.Contains(ListItem.Property(info),DD)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/mp3.png</texture>
+                <visible>String.Contains(ListItem.Property(info),MP3)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/wma.png</texture>
+                <visible>String.Contains(ListItem.Property(info),WMA)</visible>
+            </control>
+            
+            <!-- Audio Channels -->
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>32</width>
+                <height>32</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/channels/2.png</texture>
+                <visible>String.Contains(ListItem.Property(info),2.0)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>32</width>
+                <height>32</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/channels/6.png</texture>
+                <visible>String.Contains(ListItem.Property(info),5.1)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>32</width>
+                <height>32</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/channels/8.png</texture>
+                <visible>String.Contains(ListItem.Property(info),7.1)</visible>
+            </control>
         </control>
     </controls>
 </window>
