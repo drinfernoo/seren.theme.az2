@@ -22,14 +22,16 @@ You can also download the `.zip` file directly from the same URL, and install it
 `Seren -> Settings -> Theme Manager -> Install Theme -> Browse`
 
 This theme respects various settings from Arctic Zephyr 2, including:
-* `Settings -> Skin Settings -> Furniture -> Library location`
-* `Settings -> Skin Settings -> Furniture -> Section name`
-* `Settings -> Skin Settings -> Furniture -> Clock and weather`
-* `Settings -> Skin Settings -> Furniture -> Clearlogo`
-* `Settings -> Skin Settings -> Miscellaneous -> Highlight color`
-* `Settings -> Skin Settings -> Miscellaneous -> Geometric pattern on panels`
-* `Settings -> Skin Settings -> Library -> Mirror mediainfo viewtypes`
-* `Settings -> Skin Settings -> Library -> Landscape art`
+* `Settings -> Skin Settings -> Furniture -> Headers -> Library location`
+* `Settings -> Skin Settings -> Furniture -> Headers -> Section name`
+* `Settings -> Skin Settings -> Furniture -> Headers -> Clock and weather`
+* `Settings -> Skin Settings -> Furniture -> Headers -> Clearlogo`
+* `Settings -> Skin Settings -> Furniture -> Footers -> Codec flags`
+* `Settings -> Skin Settings -> Miscellaneous -> Colours -> Highlight color`
+* `Settings -> Skin Settings -> Miscellaneous -> Colours -> Geometric pattern on panels`
+* `Settings -> Skin Settings -> Miscellaneous -> Colours -> Automatically switch color theme based on time (Light 6am - Dark 6pm)`
+* `Settings -> Skin Settings -> Library -> Viewtypes -> Mirror mediainfo viewtypes`
+* `Settings -> Skin Settings -> Library -> Fonts and Artwork -> Landscape art`
 
 Also, if the theme is used on a setup with the Artwork Helper add-on installed, and "Extra Fanart" enabled in the AZ2 topbar,
 multiple fanarts wll be cycled randomly as the backdrop for this theme. This functionality currently **does not** support different
