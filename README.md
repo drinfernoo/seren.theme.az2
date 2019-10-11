@@ -6,8 +6,12 @@
 | ![Source Select](https://imgur.com/K0Z7M7g.jpg) | ![Provider Manager](https://imgur.com/r3EvhRq.jpg) | ![Playing Next Dialog](https://imgur.com/4koj1dd.jpg) |
 
 Requirements:
-* Seren - 1.4.9 or greater
+* Seren - 1.3.6 or greater
 * Arctic Zephyr 2 - 0.9.42 or greater
+
+Recommendations:
+* Seren - 1.5.1 or greater
+* Arctic Zephyr 2 - 0.9.52 or greater
 
 **This theme WILL NOT work correctly with any skin BESIDES Arctic Zephyr 2.**
 
@@ -39,6 +43,7 @@ This theme respects various settings from Arctic Zephyr 2, including:
 * `Settings -> Skin Settings -> Furniture -> Headers -> Clock and weather`
 * `Settings -> Skin Settings -> Furniture -> Headers -> Clearlogo`
 * `Settings -> Skin Settings -> Furniture -> Footers -> Codec flags`
+* `Settings -> Skin Settings -> Furniture -> Footers -> Now playing info`
 
 Also, if the user has the Artwork Helper add-on installed, and "Extra Fanart" enabled in the AZ2 topbar, multiple fanarts wll be cycled randomly as the backdrop for this theme.
 

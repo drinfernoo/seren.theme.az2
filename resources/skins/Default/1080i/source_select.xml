@@ -1544,6 +1544,8 @@
             <onleft>1000</onleft>
         </control>
         
+        <include>Object_NowPlaying</include>
+        
         <!-- Info Icons -->
         <control type="grouplist">
             <visible>!Skin.HasSetting(DisableCodecs)</visible>
