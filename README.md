@@ -1,8 +1,9 @@
 
 ## Arctic Zephyr 2 Theme for Seren
-                Source Select                   |                 Provider Manager                  |                Playing Next Dialog
-:----------------------------------------------:|:-------------------------------------------------:|:------------------------------------------------:
-![Source Select](https://imgur.com/IDjD00d.jpg) | ![Provider Manager](https://imgur.com/r3EvhRq.jpg)| ![Playing Next Dialog](https://imgur.com/4koj1dd)
+
+|                  Source Select                  |               Provider Manager                     |                Playing Next Dialog                    |
+|:-----------------------------------------------:|:--------------------------------------------------:|:-----------------------------------------------------:|
+| ![Source Select](https://imgur.com/K0Z7M7g.jpg) | ![Provider Manager](https://imgur.com/r3EvhRq.jpg) | ![Playing Next Dialog](https://imgur.com/4koj1dd.jpg) |
 
 Requirements:
 * Seren - 1.4.9 or greater
