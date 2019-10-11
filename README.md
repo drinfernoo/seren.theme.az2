@@ -15,28 +15,32 @@ To install this theme in Seren, navigate to:
 
 `Seren -> Settings -> Theme Manager -> Install Theme -> Web Location`
 
-And enter the following URL:
-https://www.github.com/drinfernoo/seren.theme.az2/zipball/master/
+And enter the following URL: https://www.github.com/drinfernoo/seren.theme.az2/zipball/master/
 
 You can also download the `.zip` file directly from the same URL, and install it from:
 
 `Seren -> Settings -> Theme Manager -> Install Theme -> Browse`
 
 This theme respects various settings from Arctic Zephyr 2, including:
+* `Settings -> Skin Settings -> Background -> Fanart`
+* `Settings -> Skin Settings -> Background -> Fallback image`
+* `Settings -> Skin Settings -> Background -> Display now playing video in background`
+* `Settings -> Skin Settings -> Background -> Set autoscroll and time per image`
+
+* `Settings -> Skin Settings -> Miscellaneous -> Colours -> Highlight color`
+* `Settings -> Skin Settings -> Miscellaneous -> Colours -> Geometric pattern on panels`
+* `Settings -> Skin Settings -> Miscellaneous -> Colours -> Automatically switch color theme based on time (Light 6am - Dark 6pm)`
+
+* `Settings -> Skin Settings -> Library -> Viewtypes -> Mirror mediainfo viewtypes`
+* `Settings -> Skin Settings -> Library -> Fonts and Artwork -> Landscape art`
+
 * `Settings -> Skin Settings -> Furniture -> Headers -> Library location`
 * `Settings -> Skin Settings -> Furniture -> Headers -> Section name`
 * `Settings -> Skin Settings -> Furniture -> Headers -> Clock and weather`
 * `Settings -> Skin Settings -> Furniture -> Headers -> Clearlogo`
 * `Settings -> Skin Settings -> Furniture -> Footers -> Codec flags`
-* `Settings -> Skin Settings -> Miscellaneous -> Colours -> Highlight color`
-* `Settings -> Skin Settings -> Miscellaneous -> Colours -> Geometric pattern on panels`
-* `Settings -> Skin Settings -> Miscellaneous -> Colours -> Automatically switch color theme based on time (Light 6am - Dark 6pm)`
-* `Settings -> Skin Settings -> Library -> Viewtypes -> Mirror mediainfo viewtypes`
-* `Settings -> Skin Settings -> Library -> Fonts and Artwork -> Landscape art`
 
-Also, if the user has the Artwork Helper add-on installed, and "Extra Fanart" enabled in the AZ2 topbar,
-multiple fanarts wll be cycled randomly as the backdrop for this theme. This functionality currently **does not** support different
-"autoscroll" timings in AZ2.
+Also, if the user has the Artwork Helper add-on installed, and "Extra Fanart" enabled in the AZ2 topbar, multiple fanarts wll be cycled randomly as the backdrop for this theme.
 
 As of Seren 1.4.9, this theme also support skinning the "Playing Next" and "Still Watching" dialog provided by Seren.
 

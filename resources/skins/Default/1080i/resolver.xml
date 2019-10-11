@@ -8,75 +8,266 @@
         
         <!-- Background -->
         <control type="group">
-            <include>Dimensions_Fullscreen</include>
-
-            <!-- Fallback Background -->
+            <include condition="Skin.HasSetting(global.showvideo)">Global_Videowindow</include>
+            <include condition="!Skin.HasSetting(global.showvideo)">Global_Videowindow_Hidden</include>
+            <include condition="Skin.HasSetting(global.showvisualisation)">Global_Visualisation</include>
+            
             <control type="group">
-                <control type="image">
-                    <texture background="true" colordiffuse="PosterBack">common/geometric.png</texture>
-                    <visible>!Skin.HasSetting(DisableGeometric)</visible>
+                <visible>$EXP[Exp_GlobalBackground]</visible>
+                
+                <!-- Fanart -->
+                <control type="group">
+                    <!-- Static Fanart -->
+                    <control type="image">
+                        <visible>!Skin.HasSetting(NoFanart)</visible>
+                        <visible>!String.IsEmpty(Window().Property(item.art.fanart) + ![Skin.HasSetting(SkinHelper.EnableExtraFanart) + System.HasAddon(script.artwork.helper)]</visible>
+                        <texture background="true">$INFO[Window().Property(item.art.fanart)]</texture>
+                    </control>
+                    
+                    <!-- Extra Fanart -->
+                    <control type="group">
+                    
+                        <!-- Autoscroll Values -->
+                        <control type="group">
+                            <left>-2160</left>
+                            <width>1</width>
+                            <height>1</height>
+                            
+                            <control type="fadelabel" id="1010">
+                                <info>Window().Property(item.art.fanart1)</info>
+                                <info>Window().Property(item.art.fanart2)</info>
+                                <info>Window().Property(item.art.fanart3)</info>
+                                <info>Window().Property(item.art.fanart4)</info>
+                                <info>Window().Property(item.art.fanart5)</info>
+                                <info>Window().Property(item.art.fanart6)</info>
+                                <info>Window().Property(item.art.fanart7)</info>
+                                <info>Window().Property(item.art.fanart8)</info>
+                                <info>Window().Property(item.art.fanart9)</info>
+                                <info>Window().Property(item.art.fanart10)</info>
+                                <info>Window().Property(item.art.fanart11)</info>
+                                <info>Window().Property(item.art.fanart12)</info>
+                                <info>Window().Property(item.art.fanart13)</info>
+                                <info>Window().Property(item.art.fanart14)</info>
+                                <info>Window().Property(item.art.fanart15)</info>
+                                <info>Window().Property(item.art.fanart16)</info>
+                                <info>Window().Property(item.art.fanart17)</info>
+                                <info>Window().Property(item.art.fanart18)</info>
+                                <info>Window().Property(item.art.fanart19)</info>
+                                <info>Window().Property(item.art.fanart20)</info>
+                                <randomize>true</randomize>
+                                <pauseatend>$INFO[Skin.String(pauseatend)]</pauseatend>
+                                <scroll>false</scroll>
+                                <scrollout>false</scrollout>
+                                <resetonlabelchange>true</resetonlabelchange>
+                                <visible>String.IsEqual(Skin.String(AutoScroll),$LOCALIZE[31117])</visible>
+                            </control>
+                            
+                            <control type="fadelabel" id="1010">
+                                <info>Window().Property(item.art.fanart1)</info>
+                                <info>Window().Property(item.art.fanart2)</info>
+                                <info>Window().Property(item.art.fanart3)</info>
+                                <info>Window().Property(item.art.fanart4)</info>
+                                <info>Window().Property(item.art.fanart5)</info>
+                                <info>Window().Property(item.art.fanart6)</info>
+                                <info>Window().Property(item.art.fanart7)</info>
+                                <info>Window().Property(item.art.fanart8)</info>
+                                <info>Window().Property(item.art.fanart9)</info>
+                                <info>Window().Property(item.art.fanart10)</info>
+                                <info>Window().Property(item.art.fanart11)</info>
+                                <info>Window().Property(item.art.fanart12)</info>
+                                <info>Window().Property(item.art.fanart13)</info>
+                                <info>Window().Property(item.art.fanart14)</info>
+                                <info>Window().Property(item.art.fanart15)</info>
+                                <info>Window().Property(item.art.fanart16)</info>
+                                <info>Window().Property(item.art.fanart17)</info>
+                                <info>Window().Property(item.art.fanart18)</info>
+                                <info>Window().Property(item.art.fanart19)</info>
+                                <info>Window().Property(item.art.fanart20)</info>
+                                <randomize>true</randomize>
+                                <pauseatend>12000</pauseatend>
+                                <scroll>false</scroll>
+                                <scrollout>false</scrollout>
+                                <resetonlabelchange>true</resetonlabelchange>
+                                <visible>String.IsEqual(Skin.String(AutoScroll),$LOCALIZE[31122]) | String.IsEmpty(Skin.String(AutoScroll))</visible>
+                            </control>
+                            
+                            <control type="fadelabel" id="1010">
+                                <info>Window().Property(item.art.fanart1)</info>
+                                <info>Window().Property(item.art.fanart2)</info>
+                                <info>Window().Property(item.art.fanart3)</info>
+                                <info>Window().Property(item.art.fanart4)</info>
+                                <info>Window().Property(item.art.fanart5)</info>
+                                <info>Window().Property(item.art.fanart6)</info>
+                                <info>Window().Property(item.art.fanart7)</info>
+                                <info>Window().Property(item.art.fanart8)</info>
+                                <info>Window().Property(item.art.fanart9)</info>
+                                <info>Window().Property(item.art.fanart10)</info>
+                                <info>Window().Property(item.art.fanart11)</info>
+                                <info>Window().Property(item.art.fanart12)</info>
+                                <info>Window().Property(item.art.fanart13)</info>
+                                <info>Window().Property(item.art.fanart14)</info>
+                                <info>Window().Property(item.art.fanart15)</info>
+                                <info>Window().Property(item.art.fanart16)</info>
+                                <info>Window().Property(item.art.fanart17)</info>
+                                <info>Window().Property(item.art.fanart18)</info>
+                                <info>Window().Property(item.art.fanart19)</info>
+                                <info>Window().Property(item.art.fanart20)</info>
+                                <randomize>true</randomize>
+                                <pauseatend>15000</pauseatend>
+                                <scroll>false</scroll>
+                                <scrollout>false</scrollout>
+                                <resetonlabelchange>true</resetonlabelchange>
+                                <visible>String.IsEqual(Skin.String(AutoScroll),$LOCALIZE[31123])</visible>
+                            </control>
+                            
+                            <control type="fadelabel" id="1010">
+                                <info>Window().Property(item.art.fanart1)</info>
+                                <info>Window().Property(item.art.fanart2)</info>
+                                <info>Window().Property(item.art.fanart3)</info>
+                                <info>Window().Property(item.art.fanart4)</info>
+                                <info>Window().Property(item.art.fanart5)</info>
+                                <info>Window().Property(item.art.fanart6)</info>
+                                <info>Window().Property(item.art.fanart7)</info>
+                                <info>Window().Property(item.art.fanart8)</info>
+                                <info>Window().Property(item.art.fanart9)</info>
+                                <info>Window().Property(item.art.fanart10)</info>
+                                <info>Window().Property(item.art.fanart11)</info>
+                                <info>Window().Property(item.art.fanart12)</info>
+                                <info>Window().Property(item.art.fanart13)</info>
+                                <info>Window().Property(item.art.fanart14)</info>
+                                <info>Window().Property(item.art.fanart15)</info>
+                                <info>Window().Property(item.art.fanart16)</info>
+                                <info>Window().Property(item.art.fanart17)</info>
+                                <info>Window().Property(item.art.fanart18)</info>
+                                <info>Window().Property(item.art.fanart19)</info>
+                                <info>Window().Property(item.art.fanart20)</info>
+                                <randomize>true</randomize>
+                                <pauseatend>20000</pauseatend>
+                                <scroll>false</scroll>
+                                <scrollout>false</scrollout>
+                                <resetonlabelchange>true</resetonlabelchange>
+                                <visible>String.IsEqual(Skin.String(AutoScroll),$LOCALIZE[31124])</visible>
+                            </control>
+                            
+                            <control type="fadelabel" id="1010">
+                                <info>Window().Property(item.art.fanart1)</info>
+                                <info>Window().Property(item.art.fanart2)</info>
+                                <info>Window().Property(item.art.fanart3)</info>
+                                <info>Window().Property(item.art.fanart4)</info>
+                                <info>Window().Property(item.art.fanart5)</info>
+                                <info>Window().Property(item.art.fanart6)</info>
+                                <info>Window().Property(item.art.fanart7)</info>
+                                <info>Window().Property(item.art.fanart8)</info>
+                                <info>Window().Property(item.art.fanart9)</info>
+                                <info>Window().Property(item.art.fanart10)</info>
+                                <info>Window().Property(item.art.fanart11)</info>
+                                <info>Window().Property(item.art.fanart12)</info>
+                                <info>Window().Property(item.art.fanart13)</info>
+                                <info>Window().Property(item.art.fanart14)</info>
+                                <info>Window().Property(item.art.fanart15)</info>
+                                <info>Window().Property(item.art.fanart16)</info>
+                                <info>Window().Property(item.art.fanart17)</info>
+                                <info>Window().Property(item.art.fanart18)</info>
+                                <info>Window().Property(item.art.fanart19)</info>
+                                <info>Window().Property(item.art.fanart20)</info>
+                                <randomize>true</randomize>
+                                <pauseatend>30000</pauseatend>
+                                <scroll>false</scroll>
+                                <scrollout>false</scrollout>
+                                <resetonlabelchange>true</resetonlabelchange>
+                                <visible>String.IsEqual(Skin.String(AutoScroll),$LOCALIZE[31125])</visible>
+                            </control>
+                            
+                            <control type="fadelabel" id="1010">
+                                <info>Window().Property(item.art.fanart1)</info>
+                                <info>Window().Property(item.art.fanart2)</info>
+                                <info>Window().Property(item.art.fanart3)</info>
+                                <info>Window().Property(item.art.fanart4)</info>
+                                <info>Window().Property(item.art.fanart5)</info>
+                                <info>Window().Property(item.art.fanart6)</info>
+                                <info>Window().Property(item.art.fanart7)</info>
+                                <info>Window().Property(item.art.fanart8)</info>
+                                <info>Window().Property(item.art.fanart9)</info>
+                                <info>Window().Property(item.art.fanart10)</info>
+                                <info>Window().Property(item.art.fanart11)</info>
+                                <info>Window().Property(item.art.fanart12)</info>
+                                <info>Window().Property(item.art.fanart13)</info>
+                                <info>Window().Property(item.art.fanart14)</info>
+                                <info>Window().Property(item.art.fanart15)</info>
+                                <info>Window().Property(item.art.fanart16)</info>
+                                <info>Window().Property(item.art.fanart17)</info>
+                                <info>Window().Property(item.art.fanart18)</info>
+                                <info>Window().Property(item.art.fanart19)</info>
+                                <info>Window().Property(item.art.fanart20)</info>
+                                <randomize>true</randomize>
+                                <pauseatend>60000</pauseatend>
+                                <scroll>false</scroll>
+                                <scrollout>false</scrollout>
+                                <resetonlabelchange>true</resetonlabelchange>
+                                <visible>String.IsEqual(Skin.String(AutoScroll),$LOCALIZE[31126])</visible>
+                            </control>
+                            
+                            <control type="fadelabel" id="1010">
+                                <info>Window().Property(item.art.fanart1)</info>
+                                <info>Window().Property(item.art.fanart2)</info>
+                                <info>Window().Property(item.art.fanart3)</info>
+                                <info>Window().Property(item.art.fanart4)</info>
+                                <info>Window().Property(item.art.fanart5)</info>
+                                <info>Window().Property(item.art.fanart6)</info>
+                                <info>Window().Property(item.art.fanart7)</info>
+                                <info>Window().Property(item.art.fanart8)</info>
+                                <info>Window().Property(item.art.fanart9)</info>
+                                <info>Window().Property(item.art.fanart10)</info>
+                                <info>Window().Property(item.art.fanart11)</info>
+                                <info>Window().Property(item.art.fanart12)</info>
+                                <info>Window().Property(item.art.fanart13)</info>
+                                <info>Window().Property(item.art.fanart14)</info>
+                                <info>Window().Property(item.art.fanart15)</info>
+                                <info>Window().Property(item.art.fanart16)</info>
+                                <info>Window().Property(item.art.fanart17)</info>
+                                <info>Window().Property(item.art.fanart18)</info>
+                                <info>Window().Property(item.art.fanart19)</info>
+                                <info>Window().Property(item.art.fanart20)</info>
+                                <randomize>true</randomize>
+                                <pauseatend>600000</pauseatend>
+                                <scroll>false</scroll>
+                                <scrollout>false</scrollout>
+                                <resetonlabelchange>true</resetonlabelchange>
+                                <visible>String.IsEqual(Skin.String(AutoScroll),$LOCALIZE[31127])</visible>
+                            </control>
+                        </control>
+                        
+                        <control type="multiimage">
+                            <visible>!Skin.HasSetting(NoFanart)</visible>
+                            <visible>Skin.HasSetting(SkinHelper.EnableExtraFanart) + System.HasAddon(script.artwork.helper)</visible>
+                            <fadetime>600</fadetime>
+                            <randomize>true</randomize>
+                            <aspectratio>scale</aspectratio>
+                            <loop>no</loop>
+                            <imagepath background="true">$INFO[Control.GetLabel(1010)]</imagepath>
+                        </control>
+                    </control>
                 </control>
                 
-                <control type="image">
-                    <texture background="true" colordiffuse="PosterBack">$INFO[Window().Property(texture.white)]</texture>
-                    <visible>Skin.HasSetting(DisableGeometric)</visible>
-                </control>
-            </control>
-            
-            <!-- Fanart -->
-            <control type="image">
-                <texture>$INFO[Window().Property(item.art.fanart)]</texture>
-                <visible>!String.IsEmpty(Window().Property(item.art.fanart)) + !(Skin.HasSetting(SkinHelper.EnableExtraFanart) | System.HasAddon(script.artwork.helper))</visible>
-            </control>
-            
-            <!-- MultiFanart -->
-            <control type="group">
-                <visible>Skin.HasSetting(SkinHelper.EnableExtraFanart) + System.HasAddon(script.artwork.helper)</visible>
-            
-                <control type="fadelabel" id="1010">
-                    <info>Window().Property(item.art.fanart)</info>
-                    <info>Window().Property(item.art.fanart1)</info>
-                    <info>Window().Property(item.art.fanart2)</info>
-                    <info>Window().Property(item.art.fanart3)</info>
-                    <info>Window().Property(item.art.fanart4)</info>
-                    <info>Window().Property(item.art.fanart5)</info>
-                    <info>Window().Property(item.art.fanart6)</info>
-                    <info>Window().Property(item.art.fanart7)</info>
-                    <info>Window().Property(item.art.fanart8)</info>
-                    <info>Window().Property(item.art.fanart9)</info>
-                    <info>Window().Property(item.art.fanart10)</info>
-                    <info>Window().Property(item.art.fanart11)</info>
-                    <info>Window().Property(item.art.fanart12)</info>
-                    <info>Window().Property(item.art.fanart13)</info>
-                    <info>Window().Property(item.art.fanart14)</info>
-                    <info>Window().Property(item.art.fanart15)</info>
-                    <info>Window().Property(item.art.fanart16)</info>
-                    <info>Window().Property(item.art.fanart17)</info>
-                    <info>Window().Property(item.art.fanart18)</info>
-                    <info>Window().Property(item.art.fanart19)</info>
-                    <info>Window().Property(item.art.fanart20)</info>
-                    <randomize>true</randomize>
-                    <pauseatend>8000</pauseatend>
-                    <scroll>false</scroll>
-                    <scrollout>false</scrollout>
-                    <resetonlabelchange>true</resetonlabelchange>
-                    <textcolor>0x00000000</textcolor>
+                <!-- Fallback -->
+                <control type="group">
+                    <visible>Skin.HasSetting(NoFanart) | String.IsEmpty(Window().Property(item.art.fanart)</visible>
+                    
+                    <control type="image">
+                        <visible>!String.IsEmpty(Skin.String(fanart.fallback))</visible>
+                        <texture background="true">$INFO[Skin.String(fanart.fallback)]</texture>
+                    </control>
+                    
+                    <control type="image">
+                        <visible>String.IsEmpty(Skin.String(fanart.fallback))</visible>
+                        <texture background="true">common/null.png</texture>
+                    </control>
                 </control>
                 
-                <!-- Background -->
-                <control type="multiimage">
-                    <imagepath background="true">$INFO[Control.GetLabel(1010)]</imagepath>
-                    <timeperimage>4000</timeperimage>
-                    <fadetime>1000</fadetime>
-                    <pauseatend>12000</pauseatend>
-                    <randomize>true</randomize>
-                    <loop>no</loop>
+                <!-- Shaded Overlay -->
+                <control type="image">
+                    <texture colordiffuse="main_bg_70">common/bg.jpg</texture>
                 </control>
-            </control>
-            
-            <!-- Shaded Overlay -->
-            <control type="image">
-                <texture colordiffuse="main_bg_70">common/bg.jpg</texture>
             </control>
         </control>
         
