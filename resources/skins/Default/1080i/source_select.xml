@@ -1609,6 +1609,16 @@
                 <visible>String.Contains(ListItem.Property(info),HDTV)</visible>
             </control>
             
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>62</width>
+                <height>52</height>
+                <aspectratio align="left">keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/other/web-dl.png</texture>
+                <visible>String.Contains(ListItem.Property(info),WEB)</visible>
+            </control>
+            
             <!-- Resolution -->
             <control type="image">
                 <fadetime>100</fadetime>
