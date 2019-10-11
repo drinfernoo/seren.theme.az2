@@ -22,10 +22,6 @@
                 
                 <!-- Episode Preview -->
                 <control type="group">
-                    <left>-15</left>
-                    <top>-15</top>
-                    <right>-15</right>
-                    <bottom>-15</bottom>
                     <width>290</width>
                     
                     <!-- Fallback Thumb -->
@@ -34,13 +30,11 @@
                         
                         <control type="image">
                             <texture background="true" colordiffuse="PosterBack">common/geometric.png</texture>
-                            <bordersize>15</bordersize>
                             <visible>!Skin.HasSetting(DisableGeometric)</visible>
                         </control>
                         
                         <control type="image">
                             <texture background="true" colordiffuse="PosterBack">$INFO[Window().Property(texture.white)]</texture>
-                            <bordersize>15</bordersize>
                             <visible>Skin.HasSetting(DisableGeometric)</visible>
                         </control>
                     </control>
@@ -49,14 +43,12 @@
                     <control type="group">
                         <control type="image">
                             <texture background="true" diffuse="diffuse/landscape-small-wall.png">$INFO[Window.Property(item.art.landscape)]</texture>
-                            <bordersize>15</bordersize>
                             <bordertexture border="30" colordiffuse="Shadow">common/shadow-15.png</bordertexture>
                             <aspectratio scalediffuse="true">scale</aspectratio>
                         </control>
                         
                         <control type="image">
                             <texture background="true" diffuse="diffuse/landscape-small-wall.png">$INFO[Window.Property(item.art.fanart)]</texture>
-                            <bordersize>15</bordersize>
                             <bordertexture border="30" colordiffuse="Shadow">common/shadow-15.png</bordertexture>
                             <aspectratio scalediffuse="true">scale</aspectratio>
                             <visible>String.IsEmpty(Window.Property(item.art.landscape))</visible>
@@ -64,7 +56,6 @@
                         
                         <control type="image">
                             <texture background="true" diffuse="diffuse/landscape-small-wall.png">$INFO[Window.Property(item.art.thumb)]</texture>
-                            <bordersize>15</bordersize>
                             <bordertexture border="30" colordiffuse="Shadow">common/shadow-15.png</bordertexture>
                             <aspectratio scalediffuse="true">scale</aspectratio>
                             <visible>String.IsEmpty(Window.Property(item.art.landscape)) + String.IsEmpty(Window.Property(item.art.fanart))</visible>
