@@ -32,7 +32,6 @@ This theme respects various settings from Arctic Zephyr 2, including:
 * `Settings -> Skin Settings -> Background -> Set autoscroll and time per image`
 
 * `Settings -> Skin Settings -> Miscellaneous -> Colours -> Highlight color`
-* `Settings -> Skin Settings -> Miscellaneous -> Colours -> Geometric pattern on panels`
 * `Settings -> Skin Settings -> Miscellaneous -> Colours -> Automatically switch color theme based on time (Light 6am - Dark 6pm)`
 
 * `Settings -> Skin Settings -> Library -> Viewtypes -> Mirror mediainfo viewtypes`

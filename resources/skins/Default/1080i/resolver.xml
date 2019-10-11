@@ -17,6 +17,7 @@
                 
                 <!-- Fanart -->
                 <control type="group">
+                
                     <!-- Static Fanart -->
                     <control type="image">
                         <visible>!Skin.HasSetting(NoFanart)</visible>
@@ -55,7 +56,7 @@
                                 <info>Window().Property(item.art.fanart19)</info>
                                 <info>Window().Property(item.art.fanart20)</info>
                                 <randomize>true</randomize>
-                                <pauseatend>$INFO[Skin.String(pauseatend)]</pauseatend>
+                                <pauseatend>10000</pauseatend>
                                 <scroll>false</scroll>
                                 <scrollout>false</scrollout>
                                 <resetonlabelchange>true</resetonlabelchange>
