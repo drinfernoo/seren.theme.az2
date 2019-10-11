@@ -1,8 +1,8 @@
 
 ## Arctic Zephyr 2 Theme for Seren
-Source Select                                   | Provider Manager
-:----------------------------------------------:|:-------------------------------------------------:
-![Source Select](https://imgur.com/IDjD00d.jpg) | ![Provider Manager](https://imgur.com/r3EvhRq.jpg)
+                Source Select                   |                 Provider Manager                  |                Playing Next Dialog
+:----------------------------------------------:|:-------------------------------------------------:|:------------------------------------------------:
+![Source Select](https://imgur.com/IDjD00d.jpg) | ![Provider Manager](https://imgur.com/r3EvhRq.jpg)| ![Playing Next Dialog](https://imgur.com/4koj1dd)
 
 Requirements:
 * Seren - 1.4.9 or greater
@@ -33,11 +33,11 @@ This theme respects various settings from Arctic Zephyr 2, including:
 * `Settings -> Skin Settings -> Library -> Viewtypes -> Mirror mediainfo viewtypes`
 * `Settings -> Skin Settings -> Library -> Fonts and Artwork -> Landscape art`
 
-Also, if the theme is used on a setup with the Artwork Helper add-on installed, and "Extra Fanart" enabled in the AZ2 topbar,
+Also, if the user has the Artwork Helper add-on installed, and "Extra Fanart" enabled in the AZ2 topbar,
 multiple fanarts wll be cycled randomly as the backdrop for this theme. This functionality currently **does not** support different
 "autoscroll" timings in AZ2.
 
-As of Seren 1.4.9, this theme also support skinning the Next Episode dialog provided by Seren.
+As of Seren 1.4.9, this theme also support skinning the "Playing Next" and "Still Watching" dialog provided by Seren.
 
 For visual continuity, it's recommended that one of the following viewtypes be used:
 * Media Info - 501
