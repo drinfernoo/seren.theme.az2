@@ -94,6 +94,28 @@
         <!-- Top Header  -->
         <control type="group">
             
+            <!-- Library Location -->
+            <control type="group">
+                <align>left</align>
+                <aligny>top</aligny>
+                <top>-900</top>
+                <left>80</left>
+                
+                <control type="label">
+                    <font>font_topbar</font>
+                    <textcolor>main_fg_100</textcolor>
+                    <label>Movies</label>
+                    <visible>!Skin.HasSetting(DisableHeader) + String.IsEqual(Window().Property(item.info.mediatype), movie)</visible>
+                </control>
+                
+                <control type="label">
+                    <font>font_topbar</font>
+                    <textcolor>main_fg_100</textcolor>
+                    <label>TV shows</label>
+                    <visible>!Skin.HasSetting(DisableHeader) + !String.IsEqual(Window().Property(item.info.mediatype), movie)</visible>
+                </control>
+            </control>
+            
             <!-- Clearlogo -->
             <control type="image" id="1001">
                 <centerleft>50%</centerleft>
@@ -114,7 +136,7 @@
                 <font>font_byline</font>
                 <textcolor>main_fg_70</textcolor>
                 <label>$INFO[Window().Property(item.info.title)]</label>
-                <visible>[!Skin.HasSetting(EnableClearlogo) | String.IsEmpty(Window().Property(item.art.clearlogo))] + String.IsEmpty(Window().Property(item.info.season))</visible>
+                <visible>[[!Skin.HasSetting(EnableClearlogo) + !Skin.HasSetting(DisableCenter)] | [Skin.HasSetting(EnableClearlogo) + [String.IsEmpty(Window().Property(item.art.clearlogo)) | String.IsEqual(Window().Property(item.art.clearlogo), None)]]] + String.IsEmpty(Window().Property(item.info.season))</visible>
             </control>
             
             <!-- Episode Fallback Label -->
@@ -127,21 +149,31 @@
                 <font>font_byline</font>
                 <textcolor>main_fg_70</textcolor>
                 <label>$INFO[Window().Property(item.info.tvshowtitle)]</label>
-                <visible>[!Skin.HasSetting(EnableClearlogo) | String.IsEmpty(Window().Property(item.art.clearlogo))] + !String.IsEmpty(Window().Property(item.info.season))</visible>
+                <visible>[[!Skin.HasSetting(EnableClearlogo) + !Skin.HasSetting(DisableCenter)] | [Skin.HasSetting(EnableClearlogo) + [String.IsEmpty(Window().Property(item.art.clearlogo)) | String.IsEqual(Window().Property(item.art.clearlogo), None)]]] + !String.IsEmpty(Window().Property(item.info.season))</visible>
+            </control>
+            
+            <!-- Clock & Weather -->
+            <control type="group">
+                <aligny>top</aligny>
+                <top>-900</top>
+                
+                <include content="Topbar_Right">
+                    <param name="fgcolor" value="main_fg" />
+                </include>
             </control>
         </control>
         
         <!-- Notification -->
-            <control type="label">
-                <font>font_info_buttons</font>
-                <centerleft>50%</centerleft>
-                <centertop>50%</centertop>
-                <align>center</align>
-                <aligny>center</aligny>
-                <textcolor>main_fg_100</textcolor>
-                <visible>String.IsEqual(Window().Property(process_started),false)</visible>
-                <label>$INFO[Window().Property(notification_text)]</label>
-            </control>
+        <control type="label">
+            <font>font_info_buttons</font>
+            <centerleft>50%</centerleft>
+            <centertop>50%</centertop>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>main_fg_100</textcolor>
+            <visible>String.IsEqual(Window().Property(process_started),false)</visible>
+            <label>$INFO[Window().Property(notification_text)]</label>
+        </control>
 
         <control type="group">
             <left>804</left>
@@ -180,5 +212,317 @@
                 </control>
             </control>
         </control>
+        
+        <!-- Info Icons -->
+        <control type="grouplist">
+            <visible>!Skin.HasSetting(DisableCodecs)</visible>
+            <orientation>horizontal</orientation>
+            <align>right</align>
+            <height>view_bottom</height>
+            <right>view_pad</right>
+            <left>view_pad</left>
+            <bottom>0</bottom>
+            <itemgap>20</itemgap>
+            <usecontrolcoords>true</usecontrolcoords>
+                
+            <!-- 3D -->
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>64</width>
+                <height>52</height>
+                <aspectratio align="left">keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/other/3D.png</texture>
+                <visible>String.Contains(Window().Property(source_info),3D)</visible>
+            </control>
+            
+            <!-- HDR -->
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>64</width>
+                <height>52</height>
+                <aspectratio align="left">keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/other/HDR.png</texture>
+                <visible>String.Contains(Window().Property(source_info),HDR)</visible>
+            </control>
+            
+            <!-- Source -->
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>62</width>
+                <height>52</height>
+                <aspectratio align="left">keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/other/bluray.png</texture>
+                <visible>String.Contains(Window().Property(source_info),BLURAY) | String.Contains(Window().Property(source_info),BDRIP) | String.Contains(Window().Property(source_info),BRRIP) | String.Contains(Window().Property(source_info),REMUX)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>62</width>
+                <height>52</height>
+                <aspectratio align="left">keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/other/hddvd.png</texture>
+                <visible>String.Contains(Window().Property(source_info),HDRIP)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>62</width>
+                <height>52</height>
+                <aspectratio align="left">keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/other/hdtv.png</texture>
+                <visible>String.Contains(Window().Property(source_info),HDTV)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>62</width>
+                <height>52</height>
+                <aspectratio align="left">keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/other/web-dl.png</texture>
+                <visible>String.Contains(Window().Property(source_info),WEB)</visible>
+            </control>
+            
+            <!-- Resolution -->
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>64</width>
+                <height>42</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/resolution/2160.png</texture>
+                <visible>String.Contains(Window().Property(source_resolution),4K)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>64</width>
+                <height>42</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/resolution/1080.png</texture>
+                <visible>String.Contains(Window().Property(source_resolution),1080p)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>64</width>
+                <height>42</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/resolution/720.png</texture>
+                <visible>String.Contains(Window().Property(source_resolution),720p)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>64</width>
+                <height>42</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/resolution/480.png</texture>
+                <visible>String.Contains(Window().Property(source_resolution),SD)</visible>
+            </control>
+            
+            <!-- Video Codec -->
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/source/h264.png</texture>
+                <visible>String.Contains(Window().Property(source_info),AVC)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/source/h265.png</texture>
+                <visible>String.Contains(Window().Property(source_info),HEVC)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/source/xvid.png</texture>
+                <visible>String.Contains(Window().Property(source_info),XVID)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/source/xvid.png</texture>
+                <visible>String.Contains(Window().Property(source_info),DIVX)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/source/mp4.png</texture>
+                <visible>String.Contains(Window().Property(source_info),MP4)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/source/wmw.png</texture>
+                <visible>String.Contains(Window().Property(source_info),WMV</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/source/mpeg4.png</texture>
+                <visible>String.Contains(Window().Property(source_info),MPEG)</visible>
+            </control>
+            
+            <!-- Audio Codec -->
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/aac.png</texture>
+                <visible>String.Contains(Window().Property(source_info),AAC)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/dts.png</texture>
+                <visible>String.Contains(Window().Property(source_info),DTS)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/dtshd_ma.png</texture>
+                <visible>String.Contains(Window().Property(source_info),HD-MA)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/atmos.png</texture>
+                <visible>String.Contains(Window().Property(source_info),ATMOS)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/truehd.png</texture>
+                <visible>String.Contains(Window().Property(source_info),TRUEHD)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/eac3.png</texture>
+                <visible>String.Contains(Window().Property(source_info),DD+)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/dolbydigital.png</texture>
+                <visible>String.Contains(Window().Property(source_info),DD)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/mp3.png</texture>
+                <visible>String.Contains(Window().Property(source_info),MP3)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>71</width>
+                <height>48</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/audio/wma.png</texture>
+                <visible>String.Contains(Window().Property(source_info),WMA)</visible>
+            </control>
+            
+            <!-- Audio Channels -->
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>32</width>
+                <height>32</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/channels/2.png</texture>
+                <visible>String.Contains(Window().Property(source_info),2.0)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>32</width>
+                <height>32</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/channels/6.png</texture>
+                <visible>String.Contains(Window().Property(source_info),5.1)</visible>
+            </control>
+            
+            <control type="image">
+                <fadetime>100</fadetime>
+                <centertop>50%</centertop>
+                <width>32</width>
+                <height>32</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="main_fg_90">flags/monochrome/channels/8.png</texture>
+                <visible>String.Contains(Window().Property(source_info),7.1)</visible>
+            </control>
+        </control>
+        
+        <include>Object_NowPlaying</include>
     </controls>
 </window>

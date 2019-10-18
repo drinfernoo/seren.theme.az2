@@ -94,6 +94,28 @@
         <!-- Top Header  -->
         <control type="group">
             
+            <!-- Library Location -->
+            <control type="group">
+                <align>left</align>
+                <aligny>top</aligny>
+                <top>-900</top>
+                <left>80</left>
+                
+                <control type="label">
+                    <font>font_topbar</font>
+                    <textcolor>main_fg_100</textcolor>
+                    <label>Movies</label>
+                    <visible>!Skin.HasSetting(DisableHeader) + String.IsEqual(Window().Property(item.info.mediatype), movie)</visible>
+                </control>
+                
+                <control type="label">
+                    <font>font_topbar</font>
+                    <textcolor>main_fg_100</textcolor>
+                    <label>TV shows</label>
+                    <visible>!Skin.HasSetting(DisableHeader) + !String.IsEqual(Window().Property(item.info.mediatype), movie)</visible>
+                </control>
+            </control>
+            
             <!-- Clearlogo -->
             <control type="image" id="1001">
                 <centerleft>50%</centerleft>
@@ -128,6 +150,16 @@
                 <textcolor>main_fg_70</textcolor>
                 <label>$INFO[Window().Property(item.info.tvshowtitle)]</label>
                 <visible>[[!Skin.HasSetting(EnableClearlogo) + !Skin.HasSetting(DisableCenter)] | [Skin.HasSetting(EnableClearlogo) + [String.IsEmpty(Window().Property(item.art.clearlogo)) | String.IsEqual(Window().Property(item.art.clearlogo), None)]]] + !String.IsEmpty(Window().Property(item.info.season))</visible>
+            </control>
+            
+            <!-- Clock & Weather -->
+            <control type="group">
+                <aligny>top</aligny>
+                <top>-900</top>
+                
+                <include content="Topbar_Right">
+                    <param name="fgcolor" value="main_fg" />
+                </include>
             </control>
         </control>
 
@@ -366,5 +398,7 @@
                 </control>
             </control>
         </control>
+        
+        <include>Object_NowPlaying</include>
     </controls>
 </window>
