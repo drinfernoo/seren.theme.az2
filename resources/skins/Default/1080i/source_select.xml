@@ -203,6 +203,50 @@
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         
+                        <!-- Stream Metadata, Cloud > 0.00 GB w/ Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + !String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud = 0.00 GB w/ Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + !String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud > 0.00 GB w/o Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud = 0.00 GB w/o Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
                         <!-- Stream Metadata, Torrents > 0.00 GB w/ Info -->
                         <control type="label">
                             <left>52</left>
@@ -329,6 +373,50 @@
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         
+                        <!-- Stream Metadata, Cloud > 0.00 GB w/ Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_bg_100</textcolor>
+                            <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + !String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud = 0.00 GB w/ Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_bg_100</textcolor>
+                            <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + !String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud > 0.00 GB w/o Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_bg_100</textcolor>
+                            <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud = 0.00 GB w/o Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_bg_100</textcolor>
+                            <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
                         <!-- Stream Metadata, Torrents > 0.00 GB w/ Info -->
                         <control type="label">
                             <left>52</left>
@@ -443,6 +531,50 @@
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <label>$INFO[ListItem.Label]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud > 0.00 GB w/ Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + !String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud = 0.00 GB w/ Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + !String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud > 0.00 GB w/o Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud = 0.00 GB w/o Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Torrents > 0.00 GB w/ Info -->
@@ -1015,6 +1147,50 @@
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         
+                        <!-- Stream Metadata, Cloud > 0.00 GB w/ Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + !String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud = 0.00 GB w/ Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + !String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud > 0.00 GB w/o Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud = 0.00 GB w/o Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
                         <!-- Stream Metadata, Torrents > 0.00 GB w/ Info -->
                         <control type="label">
                             <left>52</left>
@@ -1141,6 +1317,50 @@
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         
+                        <!-- Stream Metadata, Cloud > 0.00 GB w/ Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_bg_100</textcolor>
+                            <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + !String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud = 0.00 GB w/ Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_bg_100</textcolor>
+                            <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + !String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud > 0.00 GB w/o Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_bg_100</textcolor>
+                            <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud = 0.00 GB w/o Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_bg_100</textcolor>
+                            <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
                         <!-- Stream Metadata, Torrents > 0.00 GB w/ Info -->
                         <control type="label">
                             <left>52</left>
@@ -1255,6 +1475,50 @@
                             <font>font_small_bold</font>
                             <textcolor>main_fg_100</textcolor>
                             <label>$INFO[ListItem.Label]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud > 0.00 GB w/ Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + !String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud = 0.00 GB w/ Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + !String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud > 0.00 GB w/o Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <visible>!String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>$INFO[ListItem.Property(size)]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
+                        </control>
+                        
+                        <!-- Stream Metadata, Cloud = 0.00 GB w/o Info -->
+                        <control type="label">
+                            <left>52</left>
+                            <right>92</right>
+                            <top>24</top>
+                            <font>font_small_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <visible>String.Contains(ListItem.Property(size), 0.00) + String.IsEqual(ListItem.Property(type), cloud) + String.IsEmpty(ListItem.Property(info))</visible>
+                            <label>[UPPERCASE]$INFO[ListItem.Property(type)][/UPPERCASE]  [COLOR $VAR[ColorHighlight]]|[/COLOR]  [UPPERCASE]$INFO[ListItem.Property(debrid_provider)][/UPPERCASE]</label>
                         </control>
                         
                         <!-- Stream Metadata, Torrents > 0.00 GB w/ Info -->
