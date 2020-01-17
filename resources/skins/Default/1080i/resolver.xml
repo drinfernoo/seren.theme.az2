@@ -29,7 +29,7 @@
                         
                         <control type="image">
                             <visible>String.IsEmpty(Skin.String(fanart.fallback))</visible>
-                            <texture background="true">common/null.png</texture>
+                            <texture colordiffuse="Background">common/bg.jpg</texture>
                         </control>
                     </control>
                 
