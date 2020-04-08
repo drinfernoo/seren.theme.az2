@@ -400,5 +400,9 @@
         </control>
         
         <include>Object_NowPlaying</include>
+        
+        <control type="list" id="2000">
+            </visible>
+        </control>
     </controls>
 </window>
