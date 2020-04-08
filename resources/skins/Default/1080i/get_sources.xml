@@ -402,7 +402,7 @@
         <include>Object_NowPlaying</include>
         
         <control type="list" id="2000">
-            </visible>
+            <visible>false</visible>
         </control>
     </controls>
 </window>
